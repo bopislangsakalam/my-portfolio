@@ -1,100 +1,39 @@
-/* --- Reset --- */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* --- Animated Gradient Background --- */
+/* Body Setup */
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(-45deg, #1e3c72, #2a5298, #4e54c8, #8f94fb);
-  background-size: 400% 400%;
-  animation: gradientMove 15s ease infinite;
+  background-color: #000;
   color: #fff;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-/* --- Gradient Animation Keyframes --- */
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* --- Wave Background --- */
-.wave-background {
-  position: fixed;
-  width: 100%;
-  height: 100%;
   overflow: hidden;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  min-height: 100vh;
 }
 
-.wave {
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  bottom: 0;
-  border-radius: 43%;
-  opacity: 0.6;
-  animation: waveAnimation 10s infinite linear;
-}
-
-#wave1 {
-  animation-delay: 0s;
-  background: rgba(0, 150, 255, 0.3);
-}
-
-#wave2 {
-  animation-delay: -5s;
-  background: rgba(0, 200, 255, 0.2);
-}
-
-#wave3 {
-  animation-delay: -2s;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-@keyframes waveAnimation {
-  0% {
-    transform: translateX(0) rotate(0deg);
-  }
-  100% {
-    transform: translateX(-50%) rotate(360deg);
-  }
-}
-
-/* --- Navigation Bar --- */
+/* Navigation Bar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 18px 60px;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 0, 0, 0.3);
   backdrop-filter: blur(15px);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 100;
   border-radius: 0 0 25px 25px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  font-family: "Poppins", sans-serif;
+  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2);
 }
 
 .nav-left {
   font-weight: 700;
-  font-size: 1.2rem;
-  color: #004d40;
+  font-size: 1.3rem;
+  color: #ff4444;
 }
 
 .nav-links {
@@ -103,14 +42,10 @@ body {
   gap: 25px;
 }
 
-.nav-links li {
-  position: relative;
-}
-
 .nav-links a {
   text-decoration: none;
   font-weight: 500;
-  color: #004d40;
+  color: #fff;
   padding: 8px 18px;
   border-radius: 20px;
   transition: all 0.3s ease;
@@ -118,115 +53,68 @@ body {
 
 .nav-links a:hover,
 .nav-links a.active {
-  background-color: #004d40;
+  background-color: #ff0000;
   color: #fff;
 }
 
-/* --- Sections --- */
-section {
-  max-width: 900px;
-  margin: 100px auto;
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+/* Home Section */
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-top: 150px;
 }
 
-section h2 {
-  font-size: 2rem;
+.content h1 {
+  font-size: 2.5rem;
+  color: #ff4444;
   margin-bottom: 20px;
-  color: #ffd700;
 }
 
-section p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #f0f0f0;
-}
-
-/* --- Footer --- */
-footer {
-  text-align: center;
-  padding: 30px;
-  background: rgba(0, 0, 0, 0.4);
-  font-size: 0.9rem;
-  color: #ccc;
-}
-
-/* --- Smooth Scroll --- */
-html {
-  scroll-behavior: smooth;
-  body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  background: linear-gradient(120deg, #4b6cb7, #182848);
-  color: white;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 50px;
-  background: rgba(0, 0, 0, 0.2);
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.nav-links a.active {
-  border-bottom: 2px solid white;
-}
-
-.home-section {
-  text-align: center;
-  padding-top: 80px;
-}
-
-  /* PHOTO PLACEHOLDER */
 .photo-placeholder {
+  margin: 50px auto;
   width: 200px;
   height: 200px;
-  margin: 30px auto 0;
+  border: 3px dashed #ff4444;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  border: 3px dashed rgba(255, 255, 255, 0.4);
-}
-
-/* HOME SECTION STYLE */
-.home-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  text-align: center;
-  padding: 0 20px;
-  flex-direction: column;
+  color: #aaa;
 }
 
-.intro h1 {
-  font-size: 3rem;
+/* Floating Ball Background */
+.ball-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+  z-index: 0;
 }
 
-.intro h2 {
-  font-size: 1.5rem;
-  margin-top: 10px;
+.ball-background::before,
+.ball-background::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(255, 0, 0, 0.2);
+  animation: moveBalls 10s infinite alternate ease-in-out;
 }
 
-.intro p {
-  max-width: 600px;
-  margin: 20px auto;
+.ball-background::after {
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 0, 0, 0.4);
+  animation-duration: 8s;
 }
 
+@keyframes moveBalls {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(300px, -100px); }
+  100% { transform: translate(-200px, 150px); }
 }
-
-
