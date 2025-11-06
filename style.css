@@ -192,12 +192,41 @@ html {
   padding-top: 80px;
 }
 
+  /* PHOTO PLACEHOLDER */
 .photo-placeholder {
   width: 200px;
   height: 200px;
+  margin: 30px auto 0;
   border-radius: 50%;
-  border: 3px dashed rgba(255,255,255,0.5);
-  margin: 30px auto;
+  background: rgba(255, 255, 255, 0.2);
+  border: 3px dashed rgba(255, 255, 255, 0.4);
+}
+
+/* HOME SECTION STYLE */
+.home-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 0 20px;
+  flex-direction: column;
+}
+
+.intro h1 {
+  font-size: 3rem;
+}
+
+.intro h2 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.intro p {
+  max-width: 600px;
+  margin: 20px auto;
 }
 
 }
+
+
