@@ -1,120 +1,80 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-/* Body Setup */
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #000;
-  color: #fff;
   overflow: hidden;
-  min-height: 100vh;
+  color: white;
+  background: black;
 }
 
-/* Navigation Bar */
+canvas#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 60px;
-  background: rgba(255, 0, 0, 0.3);
-  backdrop-filter: blur(15px);
+  padding: 15px 40px;
+  background: rgba(0, 0, 0, 0.6);
   position: fixed;
-  top: 0;
   width: 100%;
   z-index: 100;
-  border-radius: 0 0 25px 25px;
-  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
 }
 
-.nav-left {
-  font-weight: 700;
+.navbar .nav-left {
+  font-weight: bold;
+  color: red;
   font-size: 1.3rem;
-  color: #ff4444;
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
-  gap: 25px;
+  list-style: none;
 }
 
-.nav-links a {
+.nav-links li a {
+  color: white;
   text-decoration: none;
+  margin: 0 15px;
   font-weight: 500;
-  color: #fff;
-  padding: 8px 18px;
-  border-radius: 20px;
-  transition: all 0.3s ease;
+  transition: color 0.3s;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-  background-color: #ff0000;
-  color: #fff;
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: red;
 }
 
-/* Home Section */
-.content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding-top: 150px;
-}
-
-.content h1 {
-  font-size: 2.5rem;
-  color: #ff4444;
-  margin-bottom: 20px;
-}
-
-.photo-placeholder {
-  margin: 50px auto;
-  width: 200px;
-  height: 200px;
-  border: 3px dashed #ff4444;
-  border-radius: 50%;
+.home-section {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #aaa;
+  text-align: center;
+  flex-direction: column;
 }
 
-/* Floating Ball Background */
-.ball-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  overflow: hidden;
-  z-index: 0;
+.intro h1 {
+  font-size: 3rem;
 }
 
-.ball-background::before,
-.ball-background::after {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
+.intro span {
+  color: red;
+}
+
+.intro .photo-placeholder {
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  background: rgba(255, 0, 0, 0.2);
-  animation: moveBalls 10s infinite alternate ease-in-out;
-}
-
-.ball-background::after {
-  width: 200px;
-  height: 200px;
-  background: rgba(255, 0, 0, 0.4);
-  animation-duration: 8s;
-}
-
-@keyframes moveBalls {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(300px, -100px); }
-  100% { transform: translate(-200px, 150px); }
+  border: 3px dashed red;
+  margin-bottom: 20px;
 }
