@@ -102,4 +102,24 @@ body, html {
   .content h1 {
     font-size: 2rem;
   }
+  .photo {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.photo img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 3px solid red;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  transition: transform 0.4s ease;
+}
+
+.photo img:hover {
+  transform: scale(1.1);
+}
+
 }
