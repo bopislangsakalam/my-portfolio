@@ -35,24 +35,25 @@
     </div>
   </section>
 
+  <!-- Smooth Page Transition -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
+    // Fade-in on page load
+    window.addEventListener("DOMContentLoaded", () => {
       document.body.classList.add("fade-in");
+    });
 
-      const links = document.querySelectorAll("a");
-      links.forEach(link => {
-        if (link.hostname === window.location.hostname) {
-          link.addEventListener("click", e => {
-            e.preventDefault();
-            const target = link.href;
-            document.body.classList.remove("fade-in");
-            document.body.style.opacity = "0";
-            setTimeout(() => {
-              window.location.href = target;
-            }, 500); // matches CSS transition duration
-          });
-        }
-      });
+    // Fade-out when clicking internal links
+    document.querySelectorAll("a").forEach(link => {
+      const href = link.getAttribute("href");
+      if (href && !href.startsWith("#")) {
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          document.body.style.opacity = "0";
+          setTimeout(() => {
+            window.location.href = href;
+          }, 600); // must match CSS transition time
+        });
+      }
     });
   </script>
 
