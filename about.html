@@ -29,6 +29,27 @@
     <p>I’m deeply interested in creating modern, user-centered websites and digital experiences that blend both creativity and functionality. I enjoy exploring front-end development, design principles, and how technology can be used to communicate ideas in impactful ways. My goal is to grow as a web developer who builds projects that inspire and connect people through design and innovation.</p>
   </section>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+
+      const links = document.querySelectorAll("a");
+      links.forEach(link => {
+        if (link.hostname === window.location.hostname) {
+          link.addEventListener("click", e => {
+            e.preventDefault();
+            const target = link.href;
+            document.body.classList.remove("fade-in");
+            document.body.style.opacity = "0";
+            setTimeout(() => {
+              window.location.href = target;
+            }, 500); // matches CSS transition duration
+          });
+        }
+      });
+    });
+  </script>
+
   <!-- Script for Live Background -->
   <script src="script.js"></script>
 </body>
