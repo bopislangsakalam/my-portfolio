@@ -1,46 +1,44 @@
-// Live Moving Ball Background Animation
-const canvas = document.getElementById('background');
-const ctx = canvas.getContext('2d');
+const canvas = document.getElementById("background");
+const ctx = canvas.getContext("2d");
 
-let width, height, particles;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-function resize() {
-  width = canvas.width = window.innerWidth;
-  height = canvas.height = window.innerHeight;
-  createParticles();
+let balls = [];
+
+for (let i = 0; i < 50; i++) {
+  balls.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 3 + 1,
+    dx: (Math.random() - 0.5) * 2,
+    dy: (Math.random() - 0.5) * 2,
+    color: `hsl(${Math.random() * 360}, 80%, 60%)`
+  });
 }
 
-function createParticles() {
-  particles = [];
-  for (let i = 0; i < 60; i++) {
-    particles.push({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      size: Math.random() * 3 + 1,
-      dx: (Math.random() - 0.5) * 2,
-      dy: (Math.random() - 0.5) * 2,
-      color: "rgba(229,57,53,0.8)" // red glow
-    });
-  }
-}
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-function draw() {
-  ctx.clearRect(0, 0, width, height);
-  for (let p of particles) {
+  balls.forEach(ball => {
     ctx.beginPath();
-    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-    ctx.fillStyle = p.color;
-    ctx.shadowBlur = 10;
-    ctx.shadowColor = "red";
+    ctx.arc(ball.x, ball.y, ball.r, 0, Math.PI * 2);
+    ctx.fillStyle = ball.color;
     ctx.fill();
-    p.x += p.dx;
-    p.y += p.dy;
-    if (p.x < 0 || p.x > width) p.dx *= -1;
-    if (p.y < 0 || p.y > height) p.dy *= -1;
-  }
-  requestAnimationFrame(draw);
+
+    ball.x += ball.dx;
+    ball.y += ball.dy;
+
+    if (ball.x < 0 || ball.x > canvas.width) ball.dx *= -1;
+    if (ball.y < 0 || ball.y > canvas.height) ball.dy *= -1;
+  });
+
+  requestAnimationFrame(animate);
 }
 
-window.addEventListener('resize', resize);
-resize();
-draw();
+animate();
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
