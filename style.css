@@ -108,6 +108,12 @@ body, html {
   justify-content: center;
 }
 
+.photo {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
 .photo img {
   width: 180px;
   height: 180px;
@@ -122,4 +128,3 @@ body, html {
   transform: scale(1.1);
 }
 
-}
