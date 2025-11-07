@@ -102,48 +102,34 @@ body, html {
 
 .glow-circle {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 250px; /* Larger size */
+  height: 250px;
   border-radius: 50%;
-  animation: glowRotate 6s linear infinite;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 25px;
-}
-
-.glow-circle::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    #e53935,
-    #ffcc00,
-    #00e5ff,
-    #e53935
+  background: radial-gradient(
+    circle,
+    rgba(229, 57, 53, 0.7),
+    rgba(0, 0, 0, 0) 70%
   );
-  filter: blur(15px);
-  animation: glowRotate 6s linear infinite;
-  opacity: 0.8;
+  box-shadow: 0 0 40px rgba(255, 0, 0, 0.6), 0 0 80px rgba(255, 0, 0, 0.3);
 }
 
 .profile-pic {
-  width: 160px;
-  height: 160px;
+  width: 200px; /* Bigger photo */
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
   z-index: 2;
   border: 3px solid rgba(255, 255, 255, 0.4);
   box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+  transition: transform 0.4s ease;
 }
 
-/* Glowing Animations */
-@keyframes glowRotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.profile-pic:hover {
+  transform: scale(1.05);
 }
 
 /* Responsive Design */
@@ -160,5 +146,15 @@ body, html {
 
   .content h1 {
     font-size: 2rem;
+  }
+
+  .glow-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .profile-pic {
+    width: 160px;
+    height: 160px;
   }
 }
