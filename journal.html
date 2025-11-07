@@ -24,6 +24,27 @@
     <p></p>
   </section>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+
+      const links = document.querySelectorAll("a");
+      links.forEach(link => {
+        if (link.hostname === window.location.hostname) {
+          link.addEventListener("click", e => {
+            e.preventDefault();
+            const target = link.href;
+            document.body.classList.remove("fade-in");
+            document.body.style.opacity = "0";
+            setTimeout(() => {
+              window.location.href = target;
+            }, 500); // matches CSS transition duration
+          });
+        }
+      });
+    });
+  </script>
+
   <script src="script.js"></script>
 </body>
 </html>
