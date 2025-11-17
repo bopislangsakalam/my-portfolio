@@ -118,8 +118,8 @@ body, html {
 }
 
 .profile-pic {
-  width: 200px; /* Bigger photo */
-  height: 200px;
+  width: 300px; /* Bigger photo */
+  height: 300px;
   border-radius: 50%;
   object-fit: cover;
   z-index: 2;
