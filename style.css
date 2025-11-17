@@ -168,3 +168,25 @@ body {
 body.fade-in {
   opacity: 1;
 }
+.page-nav-center {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nav-btn {
+  background: #e53935;
+  padding: 12px 28px;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px rgba(229, 57, 53, 0.4);
+}
+
+.nav-btn:hover {
+  background: #b71c1c;
+  transform: scale(1.05);
+}
