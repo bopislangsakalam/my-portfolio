@@ -21,6 +21,12 @@
   <section class="content">
     <h1>Journal</h1>
     <p></p>
+
+    <!-- Navigation Buttons -->
+    <div class="page-nav">
+      <a href="education.html" class="prev-btn">← Previous</a>
+    </div>
+
   </section>
 
   <script>
@@ -33,8 +39,19 @@
           link.addEventListener("click", e => {
             e.preventDefault();
             const target = link.href;
-            document.body.classList.remove("fade-in");
             document.body.style.opacity = "0";
+            setTimeout(() => {
+              window.location.href = target;
+            }, 600);
+          });
+        }
+      });
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>            document.body.style.opacity = "0";
             setTimeout(() => {
               window.location.href = target;
             }, 600); // matches CSS transition duration
