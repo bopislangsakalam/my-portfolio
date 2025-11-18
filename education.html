@@ -31,10 +31,45 @@
       <h2>Esperanza Integrated School</h2>
       <p><strong>Senior High School – STEM Health Track, With Honors</strong></p>
       <p><em>Graduated 2024</em></p>
+
       <h2>Esperanza Integrated School</h2>
       <p><strong>Junior High School – With Honors</strong></p>
+
       <h2>Esperanza Integrated School</h2>
       <p><strong>Elementary School – With Honors</strong></p>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="page-nav">
+      <a href="index.html" class="prev-btn">← Previous</a>
+      <a href="journal.html" class="next-btn">Next →</a>
+    </div>
+
+  </section>
+
+  <!-- Smooth Page Transition -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+    });
+
+    document.querySelectorAll("a").forEach(link => {
+      const href = link.getAttribute("href");
+      if (href && !href.startsWith("#")) {
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          document.body.style.opacity = "0";
+          setTimeout(() => {
+            window.location.href = href;
+          }, 600);
+        });
+      }
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>      <p><strong>Elementary School – With Honors</strong></p>
     </div>
   </section>
 
