@@ -1,53 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Education | Devon Angelo M. Ceynas</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Education | Devon</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <canvas id="background"></canvas>
 
 <nav class="navbar">
-  <div class="nav-left">My Portfolio</div>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="education.html" class="active">Education</a></li>
-    <li><a href="achievements.html">Achievements</a></li>
-  </ul>
+    <div class="nav-left">My Portfolio</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="education.html">Education</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+    </ul>
 </nav>
 
-<section class="page no-scroll">
+<section class="content">
 
-  <h1>Education</h1>
+    <h1>Education</h1>
 
-  <div class="edu-container">
+    <div class="edu-container">
 
-    <div class="edu-card">
-      <img src="uc-logo.png" class="school-logo">
-      <h2>University of the Cordilleras</h2>
-      <p><strong>BSIT – Web Technology</strong></p>
-      <p>2025 – Present</p>
+        <!-- UC -->
+        <div class="edu-card">
+            <img src="uc-logo.png" class="edu-logo">
+            <h2>University of the Cordilleras</h2>
+            <p>BSIT - Web Technology</p>
+            <img class="edu-pic" src="uc-pic.jpg">
+        </div>
+
+        <!-- SHS -->
+        <div class="edu-card">
+            <img src="eis-logo.png" class="edu-logo">
+            <h2>Esperanza Integrated School</h2>
+            <p>STEM Health Track</p>
+            <img class="edu-pic" src="shs-pic.jpg">
+        </div>
+
+        <!-- JHS + Elementary -->
+        <div class="edu-card">
+            <img src="eis-logo.png" class="edu-logo">
+            <h2>Esperanza Integrated School</h2>
+            <p>JHS / Elementary</p>
+            <img class="edu-pic" src="jhs-pic.jpg">
+        </div>
+
     </div>
 
-    <div class="edu-card">
-      <img src="eis-logo.png" class="school-logo">
-      <h2>Esperanza Integrated School</h2>
-      <p><strong>Senior High School – STEM Health</strong></p>
-      <p>Graduated 2025</p>
+    <div class="page-nav">
+        <a href="index.html" class="nav-btn">← Previous</a>
+        <a href="achievements.html" class="nav-btn">Next →</a>
     </div>
-
-  </div>
-
-  <div class="page-nav-center">
-    <a href="index.html" class="nav-btn">← Previous</a>
-    <a href="achievements.html" class="nav-btn">Next →</a>
-  </div>
 
 </section>
 
 <script src="script.js"></script>
+
 </body>
 </html>
