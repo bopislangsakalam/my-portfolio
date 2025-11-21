@@ -151,6 +151,31 @@ body, html {
 .nav-btn:hover {
     transform: scale(1.05);
 }
+/* =============== INDEX PAGE LAYOUT LEFT TEXT + RIGHT IMAGE =============== */
+.index-layout {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    text-align: left; /* aligns text properly */
+}
+
+.index-text {
+    max-width: 450px;
+    animation: fadeUp 1.3s ease-in-out;
+}
+
+.index-text h1 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+.index-text h2 {
+    font-size: 1.3rem;
+    opacity: 0.85;
+    margin-bottom: 20px;
+}
+
 
 /* =============== EDUCATION PAGE =============== */
 .edu-container {
