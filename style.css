@@ -1,3 +1,37 @@
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 10px rgba(229,57,53,0.4);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(229,57,53,0.9);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(229,57,53,0.4);
+    }
+}
+
+@keyframes softFade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Global fade in */
+body {
+    animation: softFade 1.5s ease-in-out forwards;
+}
+
 /* =============== GLOBAL RESET =============== */
 * {
     margin: 0;
@@ -11,7 +45,7 @@ body, html {
     font-family: 'Poppins', sans-serif;
     background: black;
     color: white;
-    overflow: hidden; /* NO SCROLLING */
+    overflow: hidden;
 }
 
 /* Background Canvas */
@@ -34,6 +68,7 @@ body, html {
     align-items: center;
     position: fixed;
     top: 0;
+    animation: fadeUp 1s ease-in-out;
 }
 
 .nav-left {
@@ -52,6 +87,7 @@ body, html {
     text-decoration: none;
     color: white;
     font-weight: 500;
+    transition: 0.3s ease;
 }
 
 .nav-links a.active,
@@ -61,13 +97,14 @@ body, html {
 
 /* =============== PAGE LAYOUT =============== */
 .content {
-    height: 100vh; /* FULL SCREEN */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 80px; /* navbar spacing */
+    padding-top: 80px;
     text-align: center;
+    animation: fadeUp 1.3s ease-in-out;
 }
 
 /* =============== INDEX PAGE =============== */
@@ -81,6 +118,7 @@ body, html {
     align-items: center;
     margin-bottom: 25px;
     box-shadow: 0 0 40px red;
+    animation: fadeUp 1.5s ease-in-out;
 }
 
 .profile-pic {
@@ -97,6 +135,7 @@ body, html {
     margin-top: 40px;
     display: flex;
     gap: 30px;
+    animation: fadeUp 1.7s ease-in-out;
 }
 
 .nav-btn {
@@ -106,6 +145,11 @@ body, html {
     color: white;
     text-decoration: none;
     font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.nav-btn:hover {
+    transform: scale(1.05);
 }
 
 /* =============== EDUCATION PAGE =============== */
@@ -123,6 +167,9 @@ body, html {
     border-radius: 15px;
     padding: 20px;
     border: 2px solid #e53935;
+
+    animation: fadeUp 1s ease-in-out;
+    animation-fill-mode: both;
 }
 
 .edu-logo {
@@ -138,7 +185,7 @@ body, html {
     object-fit: cover;
     margin-top: 10px;
     border-radius: 10px;
-    background: #222; /* placeholder */
+    background: #222;
 }
 
 /* =============== ACHIEVEMENTS PAGE =============== */
@@ -154,6 +201,7 @@ body, html {
     border: 2px solid #e53935;
     border-radius: 10px;
     padding: 15px;
+    animation: fadeUp 1.2s ease-in-out, glowPulse 3s infinite ease-in-out;
 }
 
 .ach-pic {
