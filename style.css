@@ -1,67 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Fullscreen no scroll */
+.no-scroll {
+  overflow: hidden;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-  overflow: hidden; /* ⛔ NO SCROLL */
-  background: #000;
-}
-
-#background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-/* NAVBAR */
-.navbar {
+/* NEW HOMEPAGE LAYOUT (like your friend’s site) */
+.homepage-layout {
   display: flex;
   justify-content: space-between;
-  padding: 15px 40px;
-  position: fixed;
-  top: 0;
+  align-items: center;
+  height: 85vh;
   width: 100%;
-  background: rgba(0,0,0,0.8);
+  padding: 0 100px;
 }
 
-.nav-links {
-  display: flex;
-  gap: 20px;
+/* LEFT SIDE TEXT */
+.home-text {
+  width: 50%;
+  text-align: left;
 }
 
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.nav-links a.active,
-.nav-links a:hover {
+.home-text h1 {
+  font-size: 3rem;
   color: #e53935;
 }
 
-/* PAGE */
-.page {
-  height: 100vh;
+.home-text h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.home-text p {
+  line-height: 1.7;
+  margin-bottom: 30px;
+  color: #eee;
+}
+
+/* RIGHT SIDE IMAGE */
+.home-photo {
+  width: 50%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 120px;
+  justify-content: center;
 }
 
-.center-wrapper {
-  text-align: center;
-}
-
-/* Bigger Profile Picture */
 .glow-circle.big {
   width: 350px;
   height: 350px;
@@ -70,34 +51,6 @@ body {
 .profile-pic.big {
   width: 320px;
   height: 320px;
-}
-
-/* Buttons */
-.nav-btn {
-  background: #e53935;
-  padding: 12px 30px;
-  border-radius: 10px;
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Education layout */
-.edu-container {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-.edu-card {
-  background: rgba(0,0,0,0.6);
-  padding: 25px;
-  width: 320px;
-  border-radius: 12px;
-  text-align: center;
-}
-
-.school-logo {
-  width: 120px;
-  margin-bottom: 10px;
+  border-radius: 50%;
+  object-fit: cover;
 }
