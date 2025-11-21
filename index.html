@@ -7,98 +7,35 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Live Animated Background -->
+
   <canvas id="background"></canvas>
 
-  <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-left">My Portfolio</div>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="education.html">Education</a></li>
-      <li><a href="achievements.html" class="active">Achievements</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
     </ul>
   </nav>
 
-  <!-- Main Content -->
-  <section class="content">
+  <section class="page no-scroll">
     <div class="center-wrapper">
-      <div class="glow-circle">
-        <img src="https://bopislangsakalam.github.io/my-portfolio/pic.png" 
-        alt="Devon Angelo M. Ceynas" class="profile-pic">
+      <div class="glow-circle big">
+        <img src="pic.png" class="profile-pic big">
       </div>
 
       <h1>Devon Angelo M. Ceynas</h1>
       <h2>Bachelor of Science in Information Technology</h2>
 
-      <p>Hello! I’m Devon Angelo M. Ceynas, born and raised in the Philippines. My curiosity about technology started at a young age — I was always fascinated by how computers work and how they can be used to solve everyday problems. This early interest grew into a passion that shaped my dream of becoming an IT professional.</p>
+      <p>Hello! I’m Devon… (your text here)</p>
 
-      <p>As a student, I enjoy learning about programming, web development, and the latest innovations in technology. I’m constantly exploring new tools and concepts that help me grow both academically and personally. School has taught me the value of hard work, collaboration, and continuous learning — traits that are essential in the tech field.</p>
-
-      <p>I aspire to be a skilled software developer, creating meaningful and user-friendly applications. Outside school, I enjoy designing, gaming, and tech content, while valuing time with family and friends. My goal is to keep improving my skills and contribute solutions that connect and improve lives.</p>
-     
-      <!-- 💥 Added Next/Previous Buttons -->
       <div class="page-nav-center">
-        <a href="journal.html" class="nav-btn">← Previous Page</a>
         <a href="education.html" class="nav-btn">Next Page →</a>
       </div>
-
     </div>
   </section>
 
-  <!-- Smooth Page Transition Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      document.body.classList.add("fade-in");
-
-      const links = document.querySelectorAll("a");
-      links.forEach(link => {
-        if (link.hostname === window.location.hostname) {
-          link.addEventListener("click", e => {
-            e.preventDefault();
-            const target = link.href;
-            document.body.classList.remove("fade-in");
-            document.body.style.opacity = "0";
-            setTimeout(() => {
-              window.location.href = target;
-            }, 600);
-          });
-        }
-      });
-    });
-  </script>
-
-  <!-- Live Background Script -->
-  <script src="script.js"></script>
-</body>
-</html>      
-</section>
-    </div>
-  </section>
-
-  <!-- Smooth Page Transition Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      document.body.classList.add("fade-in");
-
-      const links = document.querySelectorAll("a");
-      links.forEach(link => {
-        if (link.hostname === window.location.hostname) {
-          link.addEventListener("click", e => {
-            e.preventDefault();
-            const target = link.href;
-            document.body.classList.remove("fade-in");
-            document.body.style.opacity = "0";
-            setTimeout(() => {
-              window.location.href = target;
-            }, 600); // matches CSS transition duration
-          });
-        }
-      });
-    });
-  </script>
-
-  <!-- Live Background Script -->
   <script src="script.js"></script>
 </body>
 </html>
