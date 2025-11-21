@@ -3,57 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Journal | Devon Angelo M. Ceynas</title>
+  <title>Achievements | Devon Angelo M. Ceynas</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <canvas id="background"></canvas>
 
-  <nav class="navbar">
-    <div class="nav-left">My Portfolio</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="education.html">Education</a></li>
-      <li><a href="achievements.html" class="active">Achievements</a></li>
-    </ul>
-  </nav>
+<canvas id="background"></canvas>
 
-  <section class="content">
-    <h1>Journal</h1>
-    <p></p>
+<nav class="navbar">
+  <div class="nav-left">My Portfolio</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="achievements.html" class="active">Achievements</a></li>
+  </ul>
+</nav>
 
-    <!-- Navigation Buttons -->
-    <div class="page-nav">
-      <a href="education.html" class="prev-btn">← Previous</a>
+<section class="page no-scroll">
+
+  <h1>Achievements</h1>
+
+  <div class="edu-container">
+
+    <div class="edu-card">
+      <img src="award1.png" class="school-logo">
+      <h2>Achievement Title</h2>
+      <p>Description here</p>
     </div>
 
-  </section>
+    <div class="edu-card">
+      <img src="award2.png" class="school-logo">
+      <h2>Achievement Title</h2>
+      <p>Description here</p>
+    </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      document.body.classList.add("fade-in");
+  </div>
 
-      const links = document.querySelectorAll("a");
-      links.forEach(link => {
-        if (link.hostname === window.location.hostname) {
-          link.addEventListener("click", e => {
-            e.preventDefault();
-            const target = link.href;
-            document.body.style.opacity = "0";
-            setTimeout(() => {
-              window.location.href = target;
-            }, 600);
-          });
-        }
-      });
-    });
-  </script>
+  <div class="page-nav-center">
+    <a href="education.html" class="nav-btn">← Previous</a>
+  </div>
 
-  <script src="script.js"></script>
-</body>
-</html>            
-  </script>
+</section>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
