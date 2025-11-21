@@ -1,25 +1,13 @@
 /* ================= ANIMATIONS ================= */
 @keyframes fadeUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes glowPulse {
-    0% {
-        box-shadow: 0 0 10px rgba(229,57,53,0.4);
-    }
-    50% {
-        box-shadow: 0 0 25px rgba(229,57,53,0.9);
-    }
-    100% {
-        box-shadow: 0 0 10px rgba(229,57,53,0.4);
-    }
+    0% { box-shadow: 0 0 10px rgba(229,57,53,0.4); }
+    50% { box-shadow: 0 0 25px rgba(229,57,53,0.9); }
+    100% { box-shadow: 0 0 10px rgba(229,57,53,0.4); }
 }
 
 @keyframes softFade {
@@ -95,7 +83,7 @@ body, html {
     color: #e53935;
 }
 
-/* =============== PAGE LAYOUT =============== */
+/* =============== PAGE LAYOUT (GENERAL) =============== */
 .content {
     height: 100vh;
     display: flex;
@@ -105,6 +93,16 @@ body, html {
     padding-top: 80px;
     text-align: center;
     animation: fadeUp 1.3s ease-in-out;
+}
+
+/* =============== FIX: HOME PAGE SIDE-BY-SIDE =============== */
+.content.index-layout {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding-left: 80px;
+    padding-right: 80px;
 }
 
 /* =============== INDEX PAGE =============== */
@@ -130,6 +128,22 @@ body, html {
     box-shadow: 0 0 25px rgba(255,0,0,0.7);
 }
 
+.index-text {
+    max-width: 450px;
+    animation: fadeUp 1.3s ease-in-out;
+}
+
+.index-text h1 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+.index-text h2 {
+    font-size: 1.3rem;
+    opacity: 0.85;
+    margin-bottom: 20px;
+}
+
 /* =============== PAGE NAV BUTTONS =============== */
 .page-nav {
     margin-top: 40px;
@@ -151,31 +165,6 @@ body, html {
 .nav-btn:hover {
     transform: scale(1.05);
 }
-/* =============== INDEX PAGE LAYOUT LEFT TEXT + RIGHT IMAGE =============== */
-.index-layout {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 80px;
-    text-align: left; /* aligns text properly */
-}
-
-.index-text {
-    max-width: 450px;
-    animation: fadeUp 1.3s ease-in-out;
-}
-
-.index-text h1 {
-    font-size: 2.4rem;
-    margin-bottom: 10px;
-}
-
-.index-text h2 {
-    font-size: 1.3rem;
-    opacity: 0.85;
-    margin-bottom: 20px;
-}
-
 
 /* =============== EDUCATION PAGE =============== */
 .edu-container {
@@ -192,7 +181,6 @@ body, html {
     border-radius: 15px;
     padding: 20px;
     border: 2px solid #e53935;
-
     animation: fadeUp 1s ease-in-out;
     animation-fill-mode: both;
 }
