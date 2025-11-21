@@ -7,94 +7,47 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <canvas id="background"></canvas>
 
-  <nav class="navbar">
-    <div class="nav-left">My Portfolio</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="education.html" class="active">Education</a></li>
-      <li><a href="achievements.html" class="active">Achievements</a></li>
-    </ul>
-  </nav>
+<canvas id="background"></canvas>
 
-  <section class="content">
-    <h1>Education</h1>
+<nav class="navbar">
+  <div class="nav-left">My Portfolio</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="education.html" class="active">Education</a></li>
+    <li><a href="achievements.html">Achievements</a></li>
+  </ul>
+</nav>
 
-    <div class="education-item">
+<section class="page no-scroll">
+
+  <h1>Education</h1>
+
+  <div class="edu-container">
+
+    <div class="edu-card">
+      <img src="uc-logo.png" class="school-logo">
       <h2>University of the Cordilleras</h2>
-      <p><strong>BS in Information Technology, Major in Web Technology</strong></p>
-      <p><em>2025 – Present</em></p>
+      <p><strong>BSIT – Web Technology</strong></p>
+      <p>2025 – Present</p>
     </div>
 
-    <div class="education-item">
+    <div class="edu-card">
+      <img src="eis-logo.png" class="school-logo">
       <h2>Esperanza Integrated School</h2>
-      <p><strong>Senior High School – STEM Health Track </strong></p>
-      <p><em>Graduated 2025</em></p>
-
-      <h2>Esperanza Integrated School</h2>
-      <p><strong>Junior High School </strong></p>
-
-      <h2>Esperanza Integrated School</h2>
-      <p><strong>Elementary School </strong></p>
+      <p><strong>Senior High School – STEM Health</strong></p>
+      <p>Graduated 2025</p>
     </div>
 
-    <!-- Navigation Buttons -->
-    <div class="page-nav">
-      <a href="index.html" class="prev-btn">← Previous</a>
-      <a href="journal.html" class="next-btn">Next →</a>
-    </div>
+  </div>
 
-  </section>
+  <div class="page-nav-center">
+    <a href="index.html" class="nav-btn">← Previous</a>
+    <a href="achievements.html" class="nav-btn">Next →</a>
+  </div>
 
-  <!-- Smooth Page Transition -->
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      document.body.classList.add("fade-in");
-    });
+</section>
 
-    document.querySelectorAll("a").forEach(link => {
-      const href = link.getAttribute("href");
-      if (href && !href.startsWith("#")) {
-        link.addEventListener("click", e => {
-          e.preventDefault();
-          document.body.style.opacity = "0";
-          setTimeout(() => {
-            window.location.href = href;
-          }, 600);
-        });
-      }
-    });
-  </script>
-
-  <script src="script.js"></script>
-</body>
-</html>      
-    </div>
-  </section>
-
-  <!-- Smooth Page Transition -->
-  <script>
-    // Fade-in on page load
-    window.addEventListener("DOMContentLoaded", () => {
-      document.body.classList.add("fade-in");
-    });
-
-    // Fade-out when clicking internal links
-    document.querySelectorAll("a").forEach(link => {
-      const href = link.getAttribute("href");
-      if (href && !href.startsWith("#")) {
-        link.addEventListener("click", e => {
-          e.preventDefault();
-          document.body.style.opacity = "0";
-          setTimeout(() => {
-            window.location.href = href;
-          }, 600); // must match CSS transition time
-        });
-      }
-    });
-  </script>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
