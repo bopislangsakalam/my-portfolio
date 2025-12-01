@@ -263,15 +263,22 @@ body, html {
     border-radius: 10px;
     margin-bottom: 10px;
 }
+/* PAGE NAV BUTTONS */
 .page-nav {
     display: flex;
+    justify-content: flex-end; /* moves both buttons to the right */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* BATCH PAGE LAYOUT */
 .batch-layout {
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 80px; /* so the navbar doesn’t cover it */
+    padding-top: 80px; /* avoids navbar overlap */
 }
 
 .batch-container {
@@ -282,13 +289,9 @@ body, html {
 .batch-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* picture covers entire screen */
-    border-radius: 0; /* remove curves */
+    object-fit: cover;
+    border-radius: 0;
 }
 
-    justify-content: flex-end; /* pushes both buttons to the right */
-    gap: 10px; /* spacing between buttons */
-    margin-top: 20px;
-}
-
+ 
 
