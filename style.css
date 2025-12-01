@@ -128,12 +128,10 @@ body, html {
 }
 
 .profile-pic {
-    /* REVERTED: Back to original sizing for a border around the image */
     width: 300px;
     height: 300px;
     border-radius: 50%;
     object-fit: cover;
-    /* REVERTED: Re-added the inner border */
     border: 3px solid rgba(255,255,255,0.5); 
     box-shadow: 0 0 25px rgba(255,0,0,0.7);
 }
@@ -336,12 +334,15 @@ body, html {
 .batch-image {
     width: 100%;
     max-height: 75vh; 
+    /* The core property to make sure the entire photo is seen */
     object-fit: contain; 
     border-radius: 10px;
     margin-bottom: 15px;
-    /* ADDED GLOW EFFECT */
     box-shadow: 0 0 20px rgba(229, 57, 53, 0.9); 
-    
-    /* FIX: Added a red border to define a clear boundary for the glow effect */
     border: 3px solid #e53935; 
+    
+    /* FIX: Set the background color of the image element to red. 
+       When object-fit: contain leaves space around the photo, this space will be red, 
+       making the picture flush with the border/glow. */
+    background-color: #e53935;
 }
