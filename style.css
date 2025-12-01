@@ -265,6 +265,27 @@ body, html {
 }
 .page-nav {
     display: flex;
+.batch-layout {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px; /* so the navbar doesn’t cover it */
+}
+
+.batch-container {
+    width: 100%;
+    height: 100%;
+}
+
+.batch-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* picture covers entire screen */
+    border-radius: 0; /* remove curves */
+}
+
     justify-content: flex-end; /* pushes both buttons to the right */
     gap: 10px; /* spacing between buttons */
     margin-top: 20px;
