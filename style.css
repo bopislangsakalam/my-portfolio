@@ -99,7 +99,7 @@ body, html {
 .content.index-layout {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* This centers the two main columns vertically */
     text-align: left;
     padding-left: 80px;
     padding-right: 80px;
@@ -131,12 +131,11 @@ body, html {
 .index-text {
     max-width: 450px;
     animation: fadeUp 1.3s ease-in-out;
-    /* --- NEW CSS FOR LAYOUT FIX --- */
-    display: flex;             /* Use flex layout */
-    flex-direction: column;    /* Stack children (h1, h2, p, page-nav) vertically */
-    justify-content: space-between; /* Optional: adjust vertical distribution */
+    height: 100%; /* Make this container fill the available vertical space of the content area */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* Pushes the first item (text) to the top and the last item (button) to the bottom */
 }
-
 .index-text h1 {
     font-size: 2.4rem;
     margin-bottom: 10px;
@@ -159,6 +158,11 @@ body, html {
     text-decoration: none;
     font-weight: 600;
     transition: 0.3s ease;
+    
+    /* === THE FIX FOR RIGHT ALIGNMENT === */
+    margin-left: auto; /* Pushes the button to the right edge of its parent (.index-text) */
+    /* You might want a little top margin too, just in case */
+    margin-top: 20px;
 }
 
 .nav-btn:hover {
