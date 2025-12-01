@@ -99,7 +99,7 @@ body, html {
 .content.index-layout {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center; /* This centers the two main columns vertically */
+    align-items: center;
     text-align: left;
     padding-left: 80px;
     padding-right: 80px;
@@ -162,16 +162,6 @@ body, html {
     padding: 0 80px; /* Padding for horizontal edge consistency */
 }
 
-/* Specific Fix for Index Page only (if you still use the wrapper) */
-/* Note: You should check your index.html and consider removing the .page-nav wrapper */
-.page-nav.index-nav-fix {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    gap: 30px;
-    /* Removed redundant margin-top/animation as index-text handles vertical spacing */
-}
-
 /* Rule to add space between the "Previous" and "Next" buttons */
 .page-nav .nav-btn:first-child {
     margin-right: 20px; 
@@ -187,16 +177,12 @@ body, html {
     text-decoration: none;
     font-weight: 600;
     transition: 0.3s ease;
-    /* --- CRITICAL: Remove margin-left: auto and margin-top: 20px from here --- */
-    /* They were only needed for the index page button, not general nav buttons */
 }
 
-/* Index Page Button Override (Only needed if the button is NOT inside a .page-nav wrapper) */
-/* If your index button is a direct child of .index-text, use this: */
+/* Index Page Button Override (Only needed if the button is a direct child of .index-text) */
 .index-text > .nav-btn {
     margin-left: auto; /* Pushes the single button to the right within the column */
 }
-
 
 .nav-btn:hover {
     transform: scale(1.05);
@@ -302,12 +288,23 @@ body, html {
 
 /* BATCH PAGE LAYOUT */
 .batch-layout {
+    position: relative; /* CRUCIAL: Makes children positioned absolutely relative to this */
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 80px; /* avoids navbar overlap */
+    padding-top: 80px;
+}
+
+/* Batchmates Page Nav FIX (To keep it on top of the image) */
+.batch-layout > .page-nav {
+    position: absolute; /* Takes the nav out of the normal flow */
+    bottom: 40px;       /* Positions it 40px from the bottom */
+    right: 0;           /* Aligns to the right edge of the viewport (padding handles the gap) */
+    z-index: 100;       /* Ensures it is visible on top of the image */
+    width: 100%;        
+    margin-top: 0;      /* Override general margin-top */
 }
 
 .batch-container {
