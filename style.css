@@ -334,14 +334,13 @@ body, html {
 .batch-image {
     width: 100%;
     max-height: 75vh; 
-    /* FIX: Reverted to 'contain' so the image is NOT cropped */
-    object-fit: contain; 
+    /* FIX: Changed to cover to stretch the photo content to the border edges, eliminating any gaps */
+    object-fit: cover; 
     border-radius: 10px;
     margin-bottom: 15px;
     box-shadow: 0 0 20px rgba(229, 57, 53, 0.9); 
     border: 3px solid #e53935; 
     
-    /* FIX: Added background-color back to fill the empty space with red, 
-            making the photo look flush with the red border/glow. */
-    background-color: #e53935;
+    /* FIX: Removed background-color, as the photo content will now fill the area */
+    /* background-color: #e53935; */
 }
