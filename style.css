@@ -57,6 +57,9 @@ body, html {
     position: fixed;
     top: 0;
     animation: fadeUp 1s ease-in-out;
+    
+    /* FIX 1: Ensure Navbar is on top of everything */
+    z-index: 1000; 
 }
 
 .nav-left {
@@ -133,10 +136,9 @@ body, html {
 .index-text {
     max-width: 450px;
     animation: fadeUp 1.3s ease-in-out;
-    /* --- INDEX LAYOUT: Spacing restored here --- */
     height: auto; 
     display: block; 
-    margin-right: 50px; /* ADDED: Pushes the text block away from the image/center */
+    margin-right: 50px;
 }
 .index-text h1 {
     font-size: 2.4rem;
@@ -183,11 +185,11 @@ body, html {
     transform: scale(1.05);
 }
 
-/* NEW RULE: Absolute position for the NEXT button on the Index page */
+/* Absolute position for the NEXT button on the Index page */
 .index-fixed-nav {
     position: absolute;
-    bottom: 10px;      /* Down from the bottom */
-    right: 80px;       /* In from the right edge */
+    bottom: 20px; /* Using 20px for a lower position */
+    right: 80px;
     z-index: 10;
 }
 
@@ -300,14 +302,15 @@ body, html {
     padding-top: 80px;
 }
 
-/* Batchmates Page Nav FIX (To keep it on top of the image) */
+/* Batchmates Page Nav FIX (To keep it on top of the image and clickable) */
 .batch-layout > .page-nav {
     position: absolute;
     bottom: 40px;
     right: 0;
-    z-index: 100;
     width: 100%;        
     margin-top: 0;
+    /* FIX 2: Ensure this nav is clickable */
+    z-index: 200; 
 }
 
 .batch-container {
