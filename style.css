@@ -321,65 +321,26 @@ body, html {
     padding-bottom: 40px; 
 }
 
-/* NEW CONTAINER to hold the image and names for layering */
-.batch-image-container {
+.batch-container {
     width: 100%;
-    flex-grow: 1;
-    padding: 5px 80px; 
-    display: flex;
+    flex-grow: 1; 
+    padding: 5px 80px 5px 80px; 
+    display: flex; 
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    /* NEW: This is the key to layering the names box */
-    position: relative; 
-    
-    /* REMOVED: All border and glow styling */
-    border: none;
-    box-shadow: none;
 }
 
 .batch-image {
     width: 100%;
-    max-height: 80vh; 
-    /* ENSURES NO CROPPING */
-    object-fit: contain; 
+    max-height: 75vh; 
+    /* FIX: Changed to cover to stretch the photo content to the border edges, eliminating any gaps */
+    object-fit: cover; 
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 20px rgba(229, 57, 53, 0.9); 
+    border: 3px solid #e53935; 
     
-    /* REMOVED: All border and glow styling */
-    border-radius: 0; 
-    margin-bottom: 0;
-    box-shadow: none; 
-    border: none; 
-    background-color: transparent; 
-}
-
-/* STYLING for the names area (ACHIEVES LAYERED LOOK) */
-.batch-names-area {
-    /* Set the background to a SEMI-TRANSPARENT green (rgba for transparency) */
-    background-color: rgba(57, 229, 87, 0.9); /* 90% opaque green */
-    
-    width: 85%; /* Adjust width to fit the photo's width */
-    padding: 15px 30px;
-    
-    /* Black text color */
-    color: black; 
-    font-size: 0.85rem;
-    text-align: left;
-    white-space: pre-wrap; 
-    
-    /* NEW: POSITIONING TO OVERLAY THE IMAGE */
-    position: absolute;
-    bottom: 5px; /* Position 5px from the bottom of the visible image */
-    
-    /* Centers the names box horizontally */
-    left: 50%;
-    transform: translateX(-50%);
-    
-    border-radius: 0 0 10px 10px; /* Optional: adds rounded corners to the bottom of the overlay */
-}
-
-/* Style the paragraphs inside the names area */
-.batch-names-area p {
-    margin: 0; 
-    line-height: 1.4;
-    padding: 0;
+    /* FIX: Removed background-color, as the photo content will now fill the area */
+    /* background-color: #e53935; */
 }
