@@ -324,26 +324,51 @@ body, html {
 .batch-container {
     width: 100%;
     flex-grow: 1; 
-    padding: 5px 80px 5px 80px; 
+    /* NEW: Removed vertical padding for tighter fit inside the border */
+    padding: 0 80px; 
     display: flex; 
     flex-direction: column;
+    /* Center the composite element */
     justify-content: center;
     align-items: center;
+
+    /* NEW: Apply the border and glow to the container (which holds the photo AND the names) */
+    border-radius: 10px;
+    border: 3px solid #e53935; 
+    box-shadow: 0 0 20px rgba(229, 57, 53, 0.9); 
+    overflow: hidden; /* Ensures children don't overflow the rounded corners */
 }
 
 .batch-image {
     width: 100%;
-    max-height: 75vh; 
-    /* ENSURES NO CROPPING */
+    /* Let the image take up all space available above the name list */
+    max-height: 100%; 
+    /* Keep image uncropped */
     object-fit: contain; 
-    border-radius: 10px;
-    margin-bottom: 15px;
     
-    /* Only the glow remains */
-    box-shadow: 0 0 20px rgba(229, 57, 53, 0.9); 
-    
-    /* REMOVED: No sharp border line */
-    /* border: 3px solid #e53935; */ 
-    
-    /* ADDED: Background color fills the empty space, making the image look flush with the glow */
-    background-color: #e5
+    /* REMOVED: all visual styling should be on the container now */
+    border-radius: 0; 
+    margin-bottom: 0; /* Remove gap between image and names area */
+    box-shadow: none; 
+    border: none; 
+    background-color: transparent; 
+}
+
+/* NEW STYLING for the names area */
+.batch-names-area {
+    /* Set the background to the green color shown in the image */
+    background-color: #39e557; 
+    width: 100%; 
+    padding: 15px 30px;
+    color: black; 
+    font-size: 0.85rem;
+    text-align: left;
+    white-space: pre-wrap; /* Allows the names to wrap while preserving internal spacing */
+}
+
+/* Style the paragraphs inside the names area */
+.batch-names-area p {
+    margin: 0; 
+    line-height: 1.4;
+    padding: 0;
+}
