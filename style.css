@@ -188,7 +188,7 @@ body, html {
 /* Absolute position for the NEXT button on the Index page */
 .index-fixed-nav {
     position: absolute;
-    bottom: 20px; /* Using 20px for a lower position */
+    bottom: 10px; /* Using 10px for a lower position */
     right: 80px;
     z-index: 10;
 }
