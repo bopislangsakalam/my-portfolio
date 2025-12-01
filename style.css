@@ -302,12 +302,14 @@ body, html {
 .batch-layout {
     position: relative; 
     width: 100%;
-    min-height: 100vh;
+    /* FIX: Set back to fixed height to eliminate scrolling */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 80px;
-    padding-bottom: 40px;
+    /* FIX: Removed bottom padding */
+    padding-bottom: 0;
 }
 
 /* Batchmates Page Nav FIX (To keep it on top of the image and clickable) */
