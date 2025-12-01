@@ -33,7 +33,7 @@ body, html {
     font-family: 'Poppins', sans-serif;
     background: black;
     color: white;
-    /* FIX: Enforces NO SCROLLING on the entire page */
+    /* Enforces NO SCROLLING on the entire page */
     overflow: hidden; 
 }
 
@@ -88,7 +88,7 @@ body, html {
 
 /* =============== PAGE LAYOUT (GENERAL) =============== */
 .content {
-    /* FIX: Ensures all content areas are exactly 100% of the screen height */
+    /* Ensures all content areas are exactly 100% of the screen height */
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -120,6 +120,7 @@ body, html {
     width: 350px;
     height: 350px;
     border-radius: 50%;
+    /* Existing red radial gradient background */
     background: radial-gradient(circle, rgba(229,57,53,0.7), rgba(0,0,0,0));
     display: flex;
     justify-content: center;
@@ -211,7 +212,6 @@ body, html {
     justify-content: center;
     gap: 30px;
     margin-top: 40px;
-    /* FIX: Removed scrollable part */
     max-height: calc(100vh - 180px);
 }
 
@@ -239,6 +239,8 @@ body, html {
     margin-top: 10px;
     border-radius: 10px;
     background: #222;
+    /* ADDED GLOW EFFECT */
+    box-shadow: 0 0 15px rgba(229, 57, 53, 0.7); 
 }
 
 /* =============== ACHIEVEMENTS PAGE =============== */
@@ -251,7 +253,6 @@ body, html {
     max-width: 1000px;
     margin: 40px auto 0 auto;
     justify-items: center;
-    /* FIX: Removed scrollable part */
     max-height: calc(100vh - 160px); 
     padding: 10px;
 }
@@ -264,6 +265,7 @@ body, html {
     border-radius: 12px;
     padding: 15px;
     text-align: center;
+    /* Keeping glowPulse animation on the card */
     animation: fadeUp 1.2s ease-in-out, glowPulse 3s infinite ease-in-out;
 }
 
@@ -273,6 +275,8 @@ body, html {
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 10px;
+    /* ADDED GLOW EFFECT */
+    box-shadow: 0 0 15px rgba(229, 57, 53, 0.7); 
 }
 /* =============== FAMILY PAGE =============== */
 
@@ -284,7 +288,6 @@ body, html {
     max-width: 1000px;
     margin: 40px auto 0 auto;
     justify-items: center;
-    /* FIX: Removed scrollable part */
     max-height: calc(100vh - 160px); 
     padding: 10px;
 }
@@ -297,6 +300,7 @@ body, html {
     border-radius: 12px;
     padding: 15px;
     text-align: center;
+    /* Keeping glowPulse animation on the card */
     animation: fadeUp 1.2s ease-in-out, glowPulse 3s infinite ease-in-out;
 }
 
@@ -306,6 +310,8 @@ body, html {
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 10px;
+    /* ADDED GLOW EFFECT */
+    box-shadow: 0 0 15px rgba(229, 57, 53, 0.7); 
 }
 
 /* BATCH PAGE LAYOUT */
@@ -328,15 +334,19 @@ body, html {
     padding: 5px 80px 5px 80px; 
     display: flex; 
     flex-direction: column;
+    /* Center the image vertically in the remaining space */
     justify-content: center;
     align-items: center;
 }
 
 .batch-image {
     width: 100%;
-    /* Set a flexible height for the image */
-    max-height: 55vh; 
+    /* MAXIMIZE: Increased max-height so the image fills as much of the screen as possible */
+    max-height: 75vh; 
+    /* Ensures the whole image is visible (CONTAIN) */
     object-fit: contain; 
     border-radius: 10px;
     margin-bottom: 15px;
+    /* ADDED GLOW EFFECT */
+    box-shadow: 0 0 20px rgba(229, 57, 53, 0.9); 
 }
