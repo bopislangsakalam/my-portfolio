@@ -88,11 +88,11 @@ body, html {
 
 /* =============== PAGE LAYOUT (GENERAL) =============== */
 .content {
-    /* FIX: Ensures all content areas are exactly 100% of the screen height */
+    /* Ensures all content areas are exactly 100% of the screen height */
     height: 100vh;
     display: flex;
     flex-direction: column;
-    /* Pushes content to the top to free space at the bottom for names/nav */
+    /* Pushes content to the top to free space at the bottom */
     justify-content: flex-start;
     align-items: center;
     padding-top: 80px;
@@ -161,22 +161,23 @@ body, html {
 /* === PAGE NAV BUTTONS (General & Specific Fixes) === */
 /* ================================================= */
 
-/* General container for PREVIOUS/NEXT buttons on all non-index pages */
+/* FIX: Fixed positioning for all Previous/Next navigation containers */
 .page-nav {
     width: 100%; 
     display: flex;
-    justify-content: flex-end;
-    margin-top: 40px; 
+    /* FIX: Pushes the first button (Previous) to the left and the second (Next) to the right */
+    justify-content: space-between; 
+    
+    /* FIX: Fixed to the viewport bottom */
+    position: fixed; 
+    bottom: 40px; 
+    left: 0;
+    
+    /* Padded spacing from the edges */
     padding: 0 80px;
-    position: relative;
+    margin-top: 0; /* Clear previous margin */
     z-index: 900; 
 }
-
-/* Rule to add space between the "Previous" and "Next" buttons */
-.page-nav .nav-btn:first-child {
-    margin-right: 20px; 
-}
-
 
 /* General Button Styling (Applies to ALL buttons) */
 .nav-btn {
@@ -193,10 +194,11 @@ body, html {
     transform: scale(1.05);
 }
 
-/* Absolute position for the NEXT button on the Index page */
+/* FIX: Absolute position for the NEXT button on the Index page */
 .index-fixed-nav {
-    position: absolute;
-    bottom: 20px;
+    /* FIX: Changed to fixed to match the style of other page navigation */
+    position: fixed;
+    bottom: 40px; 
     right: 80px;
     z-index: 10;
 }
@@ -237,8 +239,6 @@ body, html {
 }
 
 /* =============== ACHIEVEMENTS PAGE =============== */
-
-/* =============== FIXED ACHIEVEMENTS GRID =============== */
 
 .achieve-grid {
     display: grid;
@@ -303,7 +303,6 @@ body, html {
 .batch-layout {
     position: relative; 
     width: 100%;
-    /* Fixed height inherited from .content */
     height: 100vh;
     display: flex;
     justify-content: flex-start;
@@ -314,22 +313,18 @@ body, html {
 
 .batch-container {
     width: 100%;
-    /* Gives the picture container priority in vertical space */
     flex-grow: 1; 
-    
-    /* MINIMIZE PADDING to free up space */
     padding: 5px 80px 5px 80px; 
 }
 
 .batch-image {
     width: 100%;
     height: 100%;
-    /* Ensures the whole picture is visible without cropping */
     object-fit: contain; 
     border-radius: 10px;
 }
 
-/* FIX: New rule to contain and make names scrollable within the fixed page */
+/* FIX: Rule to contain and make names scrollable within the fixed page */
 .batch-names-area {
     /* Set max height to ensure it doesn't push the page content too far */
     max-height: 150px; 
@@ -342,12 +337,4 @@ body, html {
     z-index: 5;
 }
 
-/* Batchmates Page Nav FIX (To keep it on top of the image and clickable) */
-.batch-layout > .page-nav {
-    position: absolute;
-    bottom: 40px;
-    right: 0;
-    width: 100%;        
-    margin-top: 0;
-    z-index: 200; 
-}
+/* Removed previous specific batch layout navigation fix as global .page-nav now handles fixed positioning */
