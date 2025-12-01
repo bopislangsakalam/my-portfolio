@@ -92,7 +92,7 @@ body, html {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    /* FIX: Pushes content to the top to free space at the bottom for names/nav */
+    /* Pushes content to the top to free space at the bottom for names/nav */
     justify-content: flex-start;
     align-items: center;
     padding-top: 80px;
@@ -112,7 +112,6 @@ body, html {
     text-align: left;
     padding-left: 80px;
     padding-right: 80px;
-    /* Index page uses different height calculation, so we leave this specific rule */
     height: calc(100vh - 80px); 
     position: relative;
 }
@@ -307,7 +306,6 @@ body, html {
     /* Fixed height inherited from .content */
     height: 100vh;
     display: flex;
-    /* Should already be flex-start from .content */
     justify-content: flex-start;
     align-items: center;
     padding-top: 80px;
@@ -316,8 +314,7 @@ body, html {
 
 .batch-container {
     width: 100%;
-    /* REMOVED height: 100% to allow it to share vertical space */
-    /* FIX: Give the picture container priority over the names/nav at the bottom */
+    /* Gives the picture container priority in vertical space */
     flex-grow: 1; 
     
     /* MINIMIZE PADDING to free up space */
@@ -327,9 +324,22 @@ body, html {
 .batch-image {
     width: 100%;
     height: 100%;
-    /* FIX: Ensures the whole picture is visible without cropping */
+    /* Ensures the whole picture is visible without cropping */
     object-fit: contain; 
     border-radius: 10px;
+}
+
+/* FIX: New rule to contain and make names scrollable within the fixed page */
+.batch-names-area {
+    /* Set max height to ensure it doesn't push the page content too far */
+    max-height: 150px; 
+    width: 100%;
+    /* Allows internal scrolling if the list of names is too long */
+    overflow-y: auto; 
+    padding-bottom: 5px;
+    
+    position: relative; 
+    z-index: 5;
 }
 
 /* Batchmates Page Nav FIX (To keep it on top of the image and clickable) */
