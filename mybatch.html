@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Batch</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>My Batch | Devon</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="batch-container">
 
-    <div class="batch-wrapper">
-        <img src="your-batch-picture.jpg" alt="My Batch Picture" class="batch-fullscreen" />
+<body>
+
+<canvas id="background"></canvas>
+
+<nav class="navbar">
+    <div class="nav-left">My Portfolio</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="myfamily.html">My Family</a></li>
+        <li><a class="active" href="mybatch.html">My Batch</a></li>
+    </ul>
+</nav>
+
+<section class="content batch-layout">
+    <div class="batch-container">
+        <img src="batch.jpg" alt="My Batch" class="batch-image">
     </div>
+</section>
 
-    <div class="batch-back">
-        <a href="index.html" class="back-btn">Back to Home</a>
-    </div>
-
+<script src="script.js"></script>
 </body>
 </html>
-
