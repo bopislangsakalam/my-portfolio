@@ -43,7 +43,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    /* FIX: REMOVED z-index: -1; to resolve stacking context issue */
 }
 
 /* =============== NAVBAR =============== */
@@ -58,7 +58,7 @@ body, html {
     top: 0;
     animation: fadeUp 1s ease-in-out;
     
-    /* FIX 1: Ensure Navbar is on top of everything */
+    /* Ensure Navbar is on top of everything */
     z-index: 1000; 
 }
 
@@ -188,7 +188,7 @@ body, html {
 /* Absolute position for the NEXT button on the Index page */
 .index-fixed-nav {
     position: absolute;
-    bottom: 10px; /* Using 10px for a lower position */
+    bottom: 20px;
     right: 80px;
     z-index: 10;
 }
@@ -309,7 +309,6 @@ body, html {
     right: 0;
     width: 100%;        
     margin-top: 0;
-    /* FIX 2: Ensure this nav is clickable */
     z-index: 200; 
 }
 
