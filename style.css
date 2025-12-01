@@ -103,6 +103,7 @@ body, html {
     text-align: left;
     padding-left: 80px;
     padding-right: 80px;
+    height: calc(100vh - 80px);
 }
 
 /* =============== INDEX PAGE =============== */
@@ -131,10 +132,11 @@ body, html {
 .index-text {
     max-width: 450px;
     animation: fadeUp 1.3s ease-in-out;
-    height: 100%; /* Make this container fill the available vertical space of the content area */
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
-    justify-content: space-between; /* Pushes the first item (text) to the top and the last item (button) to the bottom */
+    /* --- NEW CSS FOR LAYOUT FIX --- */
+    height: 100%; /* NEW: Crucial to take up vertical space */
+    display: flex; /* NEW: Enable flex layout */
+    flex-direction: column; /* NEW: Stack children (text and button) vertically */
+    justify-content: space-between; /* NEW: Pushes the text to the top, button to the bottom */
 }
 .index-text h1 {
     font-size: 2.4rem;
@@ -272,12 +274,11 @@ body, html {
 .page-nav.index-nav-fix {
     width: 100%;
     display: flex;
-    justify-content: flex-end;
-    margin-top: 40px;
+    justify-content: flex-end; /* Keeps the button pushed to the right */
+    /* REMOVE margin-top: 40px; if it was present, as space-between handles vertical alignment now */
     gap: 30px;
     animation: fadeUp 1.7s ease-in-out;
 }
-
 .nav-btn {
     background: #e53935;
     padding: 12px 30px;
