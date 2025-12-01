@@ -132,11 +132,11 @@ body, html {
 .index-text {
     max-width: 450px;
     animation: fadeUp 1.3s ease-in-out;
-    /* --- NEW CSS FOR LAYOUT FIX --- */
-    height: 100%; /* NEW: Crucial to take up vertical space */
-    display: flex; /* NEW: Enable flex layout */
-    flex-direction: column; /* NEW: Stack children (text and button) vertically */
-    justify-content: space-between; /* NEW: Pushes the text to the top, button to the bottom */
+    /* --- INDEX LAYOUT FIX (Kept from previous steps) --- */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .index-text h1 {
     font-size: 2.4rem;
@@ -149,9 +149,36 @@ body, html {
     margin-bottom: 20px;
 }
 
-/* =============== PAGE NAV BUTTONS =============== */
+/* ================================================= */
+/* === PAGE NAV BUTTONS (General & Specific Fixes) === */
+/* ================================================= */
+
+/* General container for PREVIOUS/NEXT buttons on all non-index pages */
+.page-nav {
+    width: 100%; 
+    display: flex;
+    justify-content: flex-end; /* Pushes the entire button block to the right */
+    margin-top: 40px; 
+    padding: 0 80px; /* Padding for horizontal edge consistency */
+}
+
+/* Specific Fix for Index Page only (if you still use the wrapper) */
+/* Note: You should check your index.html and consider removing the .page-nav wrapper */
+.page-nav.index-nav-fix {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    /* Removed redundant margin-top/animation as index-text handles vertical spacing */
+}
+
+/* Rule to add space between the "Previous" and "Next" buttons */
+.page-nav .nav-btn:first-child {
+    margin-right: 20px; 
+}
 
 
+/* General Button Styling (Applies to ALL buttons) */
 .nav-btn {
     background: #e53935;
     padding: 12px 30px;
@@ -160,12 +187,16 @@ body, html {
     text-decoration: none;
     font-weight: 600;
     transition: 0.3s ease;
-    
-    /* === THE FIX FOR RIGHT ALIGNMENT === */
-    margin-left: auto; /* Pushes the button to the right edge of its parent (.index-text) */
-    /* You might want a little top margin too, just in case */
-    margin-top: 20px;
+    /* --- CRITICAL: Remove margin-left: auto and margin-top: 20px from here --- */
+    /* They were only needed for the index page button, not general nav buttons */
 }
+
+/* Index Page Button Override (Only needed if the button is NOT inside a .page-nav wrapper) */
+/* If your index button is a direct child of .index-text, use this: */
+.index-text > .nav-btn {
+    margin-left: auto; /* Pushes the single button to the right within the column */
+}
+
 
 .nav-btn:hover {
     transform: scale(1.05);
@@ -268,29 +299,6 @@ body, html {
     border-radius: 10px;
     margin-bottom: 10px;
 }
-/* PAGE NAV BUTTONS */
-
-/* =============== PAGE NAV BUTTONS (Specific Fix for Index Page) =============== */
-.page-nav.index-nav-fix {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end; /* Keeps the button pushed to the right */
-    /* REMOVE margin-top: 40px; if it was present, as space-between handles vertical alignment now */
-    gap: 30px;
-    animation: fadeUp 1.7s ease-in-out;
-}
-.nav-btn {
-    background: #e53935;
-    padding: 12px 30px;
-    border-radius: 10px;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s ease;
-    /* Remove any positioning/margin/display rules here if they cause conflict */
-}
-
-
 
 /* BATCH PAGE LAYOUT */
 .batch-layout {
@@ -313,6 +321,3 @@ body, html {
     object-fit: cover;
     border-radius: 0;
 }
-
- 
-
