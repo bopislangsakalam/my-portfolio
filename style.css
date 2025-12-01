@@ -43,7 +43,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    /* FIX: REMOVED z-index: -1; to resolve stacking context issue */
+    /* FIX: Removed z-index: -1; to resolve stacking context issue and make the navbar clickable */
 }
 
 /* =============== NAVBAR =============== */
@@ -188,7 +188,7 @@ body, html {
 /* Absolute position for the NEXT button on the Index page */
 .index-fixed-nav {
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     right: 80px;
     z-index: 10;
 }
@@ -315,11 +315,14 @@ body, html {
 .batch-container {
     width: 100%;
     height: 100%;
+    /* NEW: Add padding to create the border/space around the image */
+    padding: 40px 80px 80px 80px; 
 }
 
 .batch-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 0;
+    /* NEW: Added border radius for a softer look */
+    border-radius: 10px;
 }
