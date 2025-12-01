@@ -33,7 +33,7 @@ body, html {
     font-family: 'Poppins', sans-serif;
     background: black;
     color: white;
-    /* This ensures no scrollbar appears if body content exceeds viewport */
+    /* FIX: Ensures ALL pages are non-scrollable */
     overflow: hidden; 
 }
 
@@ -88,18 +88,18 @@ body, html {
 
 /* =============== PAGE LAYOUT (GENERAL) =============== */
 .content {
-    /* FIX: Set back to fixed height to eliminate scrolling on all pages */
+    /* FIX: Ensures all content areas are exactly 100% of the screen height */
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* FIX: Pushes content to the top to free space at the bottom for names/nav */
+    justify-content: flex-start;
     align-items: center;
     padding-top: 80px;
     padding-bottom: 40px;
     text-align: center;
     animation: fadeUp 1.3s ease-in-out;
     
-    /* FIX: Set a lower Z-index for content */
     position: relative;
     z-index: 10;
 }
@@ -112,6 +112,7 @@ body, html {
     text-align: left;
     padding-left: 80px;
     padding-right: 80px;
+    /* Index page uses different height calculation, so we leave this specific rule */
     height: calc(100vh - 80px); 
     position: relative;
 }
@@ -168,7 +169,6 @@ body, html {
     justify-content: flex-end;
     margin-top: 40px; 
     padding: 0 80px;
-    /* FIX: Increased Z-index to guarantee clickability over animated content */
     position: relative;
     z-index: 900; 
 }
@@ -304,13 +304,32 @@ body, html {
 .batch-layout {
     position: relative; 
     width: 100%;
-    /* Set back to fixed height to eliminate scrolling */
+    /* Fixed height inherited from .content */
     height: 100vh;
     display: flex;
-    justify-content: center;
+    /* Should already be flex-start from .content */
+    justify-content: flex-start;
     align-items: center;
     padding-top: 80px;
     padding-bottom: 0;
+}
+
+.batch-container {
+    width: 100%;
+    /* REMOVED height: 100% to allow it to share vertical space */
+    /* FIX: Give the picture container priority over the names/nav at the bottom */
+    flex-grow: 1; 
+    
+    /* MINIMIZE PADDING to free up space */
+    padding: 5px 80px 5px 80px; 
+}
+
+.batch-image {
+    width: 100%;
+    height: 100%;
+    /* FIX: Ensures the whole picture is visible without cropping */
+    object-fit: contain; 
+    border-radius: 10px;
 }
 
 /* Batchmates Page Nav FIX (To keep it on top of the image and clickable) */
@@ -321,17 +340,4 @@ body, html {
     width: 100%;        
     margin-top: 0;
     z-index: 200; 
-}
-
-.batch-container {
-    width: 100%;
-    height: 100%;
-    padding: 40px 80px 80px 80px; 
-}
-
-.batch-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
 }
