@@ -33,7 +33,7 @@ body, html {
     font-family: 'Poppins', sans-serif;
     background: black;
     color: white;
-    /* FIX: Ensures ALL pages are non-scrollable */
+    /* FIX: Set back to non-scrollable / fixed height */
     overflow: hidden; 
 }
 
@@ -88,7 +88,7 @@ body, html {
 
 /* =============== PAGE LAYOUT (GENERAL) =============== */
 .content {
-    /* Ensures all content areas are exactly 100% of the screen height */
+    /* FIX: Ensures all content areas are exactly 100% of the screen height */
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -96,7 +96,7 @@ body, html {
     justify-content: flex-start;
     align-items: center;
     padding-top: 80px;
-    padding-bottom: 40px;
+    padding-bottom: 40px; /* Reduced padding since we are non-scrollable */
     text-align: center;
     animation: fadeUp 1.3s ease-in-out;
     
@@ -104,7 +104,7 @@ body, html {
     z-index: 10;
 }
 
-/* =============== FIX: HOME PAGE SIDE-BY-SIDE =============== */
+/* =============== HOME PAGE (Special Fixed Height Layout) =============== */
 .content.index-layout {
     flex-direction: row;
     justify-content: space-between;
@@ -116,7 +116,7 @@ body, html {
     position: relative;
 }
 
-/* =============== INDEX PAGE =============== */
+/* =============== INDEX PAGE ELEMENTS =============== */
 .big-circle {
     width: 350px;
     height: 350px;
@@ -131,4 +131,233 @@ body, html {
 }
 
 .profile-pic {
-    width:
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,0.5);
+    box-shadow: 0 0 25px rgba(255,0,0,0.7);
+}
+
+.index-text {
+    max-width: 450px;
+    animation: fadeUp 1.3s ease-in-out;
+    height: auto; 
+    display: block; 
+    margin-right: 50px;
+}
+.index-text h1 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+.index-text h2 {
+    font-size: 1.3rem;
+    opacity: 0.85;
+    margin-bottom: 20px;
+}
+
+/* ================================================= */
+/* === PAGE NAV BUTTONS (Right-Aligned and Fixed) === */
+/* ================================================= */
+
+.page-nav {
+    width: 100%; 
+    display: flex;
+    /* FIX: Pushes both buttons to the right side of the screen */
+    justify-content: flex-end; 
+    
+    /* Fixed to the viewport bottom */
+    position: fixed; 
+    bottom: 40px; 
+    left: 0;
+    
+    /* Padded spacing from the edges */
+    padding: 0 80px;
+    margin-top: 0; 
+    z-index: 900; 
+}
+
+/* Adds space between the 'Previous' button and the 'Next' button */
+.page-nav .nav-btn:first-child {
+    margin-right: 20px;
+}
+
+/* General Button Styling (Applies to ALL buttons) */
+.nav-btn {
+    background: #e53935;
+    padding: 12px 30px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.nav-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Fixed position for the single NEXT button on the Index page */
+.index-fixed-nav {
+    position: fixed;
+    bottom: 40px; 
+    right: 80px;
+    z-index: 10;
+}
+
+/* =============== EDUCATION PAGE =============== */
+.edu-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    /* FIX: Allows the education card content to be viewed within the fixed-height screen */
+    overflow-y: auto; 
+    padding: 20px; 
+    max-height: calc(100vh - 180px); /* Adjust height to fit below navbar and above fixed nav */
+}
+
+.edu-card {
+    width: 280px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px solid #e53935;
+    animation: fadeUp 1s ease-in-out;
+    animation-fill-mode: both;
+}
+
+.edu-logo {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.edu-pic {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: #222;
+}
+
+/* =============== ACHIEVEMENTS PAGE =============== */
+
+.achieve-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-gap: 35px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
+    justify-items: center;
+    /* FIX: Allows the grid to be scrollable if content overflows the fixed screen height */
+    overflow-y: auto; 
+    max-height: calc(100vh - 160px); 
+    padding: 10px;
+}
+
+.ach-card {
+    width: 100%;
+    max-width: 260px;
+    background: rgba(0,0,0,0.7);
+    border: 2px solid #e53935;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    animation: fadeUp 1.2s ease-in-out, glowPulse 3s infinite ease-in-out;
+}
+
+.ach-pic {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+/* =============== FAMILY PAGE =============== */
+
+.family-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-gap: 35px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
+    justify-items: center;
+    /* FIX: Allows the grid to be scrollable if content overflows the fixed screen height */
+    overflow-y: auto; 
+    max-height: calc(100vh - 160px); 
+    padding: 10px;
+}
+
+.family-card {
+    width: 100%;
+    max-width: 260px;
+    background: rgba(0,0,0,0.7);
+    border: 2px solid #e53935;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    animation: fadeUp 1.2s ease-in-out, glowPulse 3s infinite ease-in-out;
+}
+
+.family-pic {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* BATCH PAGE LAYOUT */
+.batch-layout {
+    /* FIX: Ensures the page is fixed height */
+    height: 100vh;
+    position: relative; 
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 40px; 
+}
+
+.batch-container {
+    width: 100%;
+    flex-grow: 1; 
+    padding: 5px 80px 5px 80px; 
+    /* FIX: Ensures the image/names area takes available vertical space */
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.batch-image {
+    width: 100%;
+    /* Set a flexible height for the image */
+    max-height: 55vh; 
+    object-fit: contain; 
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Rule to contain and make names scrollable within the content area */
+.batch-names-area {
+    /* Set max height relative to the viewport height */
+    max-height: 20vh; 
+    width: 100%;
+    /* Allows internal scrolling if the list of names is too long */
+    overflow-y: auto; 
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    
+    position: relative; 
+    z-index: 5;
+}
