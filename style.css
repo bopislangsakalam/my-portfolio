@@ -333,14 +333,17 @@ body, html {
 
 .batch-image {
     width: 100%;
-    max-height: 80vh; 
-    /* FIX: Changed to cover to stretch the photo content to the border edges, eliminating any gaps */
-    object-fit: cover; 
+    max-height: 75vh; 
+    /* ENSURES NO CROPPING */
+    object-fit: contain; 
     border-radius: 10px;
     margin-bottom: 15px;
-    box-shadow: 0 0 20px rgba(229, 57, 53, 0.9); 
-    border: 3px solid #e53935; 
     
-    /* FIX: Removed background-color, as the photo content will now fill the area */
-    /* background-color: #e53935; */
-}
+    /* Only the glow remains */
+    box-shadow: 0 0 20px rgba(229, 57, 53, 0.9); 
+    
+    /* REMOVED: No sharp border line */
+    /* border: 3px solid #e53935; */ 
+    
+    /* ADDED: Background color fills the empty space, making the image look flush with the glow */
+    background-color: #e5
