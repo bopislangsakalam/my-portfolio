@@ -263,5 +263,11 @@ body, html {
     border-radius: 10px;
     margin-bottom: 10px;
 }
+.page-nav {
+    display: flex;
+    justify-content: flex-end; /* pushes both buttons to the right */
+    gap: 10px; /* spacing between buttons */
+    margin-top: 20px;
+}
 
 
