@@ -321,52 +321,60 @@ body, html {
     padding-bottom: 40px; 
 }
 
-.batch-container {
+/* NEW CONTAINER to hold the image and names for layering */
+.batch-image-container {
     width: 100%;
-    flex-grow: 1; 
-    /* Removed vertical padding for tighter fit inside the border */
-    padding: 0 80px; 
-    display: flex; 
-    flex-direction: column;
-    /* Center the composite element */
+    flex-grow: 1;
+    padding: 5px 80px; 
+    display: flex;
     justify-content: center;
     align-items: center;
-
-    /* APPLY THE RED BORDER AND GLOW TO THE CONTAINER */
-    border-radius: 10px;
-    border: 3px solid #e53935; 
-    box-shadow: 0 0 20px rgba(229, 57, 53, 0.9); 
-    overflow: hidden; 
+    
+    /* NEW: This is the key to layering the names box */
+    position: relative; 
+    
+    /* REMOVED: All border and glow styling */
+    border: none;
+    box-shadow: none;
 }
 
 .batch-image {
     width: 100%;
-    max-height: 100%; 
+    max-height: 80vh; 
     /* ENSURES NO CROPPING */
     object-fit: contain; 
     
-    /* REMOVED: all visual styling should be on the container now */
+    /* REMOVED: All border and glow styling */
     border-radius: 0; 
-    margin-bottom: 0; /* Remove gap between image and names area */
+    margin-bottom: 0;
     box-shadow: none; 
     border: none; 
     background-color: transparent; 
 }
 
-/* STYLING for the names area (ACHIEVES SOLID GREEN BACKGROUND, BLACK TEXT) */
+/* STYLING for the names area (ACHIEVES LAYERED LOOK) */
 .batch-names-area {
-    /* Solid Green background color from the image */
-    background-color: #39e557; 
+    /* Set the background to a SEMI-TRANSPARENT green (rgba for transparency) */
+    background-color: rgba(57, 229, 87, 0.9); /* 90% opaque green */
     
-    width: 100%; 
+    width: 85%; /* Adjust width to fit the photo's width */
     padding: 15px 30px;
     
-    /* Black text color from the image */
+    /* Black text color */
     color: black; 
-    
     font-size: 0.85rem;
     text-align: left;
     white-space: pre-wrap; 
+    
+    /* NEW: POSITIONING TO OVERLAY THE IMAGE */
+    position: absolute;
+    bottom: 5px; /* Position 5px from the bottom of the visible image */
+    
+    /* Centers the names box horizontally */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    border-radius: 0 0 10px 10px; /* Optional: adds rounded corners to the bottom of the overlay */
 }
 
 /* Style the paragraphs inside the names area */
