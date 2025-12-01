@@ -104,7 +104,7 @@ body, html {
     padding-left: 80px;
     padding-right: 80px;
     height: calc(100vh - 80px);
-    position: relative; /* ADDED: Crucial for absolute positioning of the Next button */
+    position: relative;
 }
 
 /* =============== INDEX PAGE =============== */
@@ -133,10 +133,10 @@ body, html {
 .index-text {
     max-width: 450px;
     animation: fadeUp 1.3s ease-in-out;
-    /* --- INDEX LAYOUT: Text column now only holds text --- */
-    /* Remove vertical flex rules as the button is no longer a child */
+    /* --- INDEX LAYOUT: Spacing restored here --- */
     height: auto; 
     display: block; 
+    margin-right: 50px; /* ADDED: Pushes the text block away from the image/center */
 }
 .index-text h1 {
     font-size: 2.4rem;
