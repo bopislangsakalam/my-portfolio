@@ -33,7 +33,7 @@ body, html {
     font-family: 'Poppins', sans-serif;
     background: black;
     color: white;
-    /* Enforces NO SCROLLING on the entire page */
+    /* ENFORCED: No scrolling on the entire page */
     overflow: hidden; 
 }
 
@@ -57,8 +57,6 @@ body, html {
     position: fixed;
     top: 0;
     animation: fadeUp 1s ease-in-out;
-    
-    /* Ensure Navbar is on top of everything */
     z-index: 1000; 
 }
 
@@ -88,7 +86,7 @@ body, html {
 
 /* =============== PAGE LAYOUT (GENERAL) =============== */
 .content {
-    /* Ensures all content areas are exactly 100% of the screen height */
+    /* ENFORCED: Fixed height for all content pages */
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -120,7 +118,6 @@ body, html {
     width: 350px;
     height: 350px;
     border-radius: 50%;
-    /* Existing red radial gradient background */
     background: radial-gradient(circle, rgba(229,57,53,0.7), rgba(0,0,0,0));
     display: flex;
     justify-content: center;
@@ -131,11 +128,13 @@ body, html {
 }
 
 .profile-pic {
+    /* REVERTED: Back to original sizing for a border around the image */
     width: 300px;
     height: 300px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid rgba(255,255,255,0.5);
+    /* REVERTED: Re-added the inner border */
+    border: 3px solid rgba(255,255,255,0.5); 
     box-shadow: 0 0 25px rgba(255,0,0,0.7);
 }
 
@@ -164,7 +163,7 @@ body, html {
 .page-nav {
     width: 100%; 
     display: flex;
-    /* Pushes both buttons to the right side of the screen */
+    /* ENFORCED: Pushes both buttons to the right side of the screen, side-by-side */
     justify-content: flex-end; 
     
     /* Fixed to the viewport bottom */
@@ -172,7 +171,6 @@ body, html {
     bottom: 40px; 
     left: 0;
     
-    /* Padded spacing from the edges */
     padding: 0 80px;
     margin-top: 0; 
     z-index: 900; 
@@ -265,7 +263,6 @@ body, html {
     border-radius: 12px;
     padding: 15px;
     text-align: center;
-    /* Keeping glowPulse animation on the card */
     animation: fadeUp 1.2s ease-in-out, glowPulse 3s infinite ease-in-out;
 }
 
@@ -300,7 +297,6 @@ body, html {
     border-radius: 12px;
     padding: 15px;
     text-align: center;
-    /* Keeping glowPulse animation on the card */
     animation: fadeUp 1.2s ease-in-out, glowPulse 3s infinite ease-in-out;
 }
 
@@ -316,7 +312,6 @@ body, html {
 
 /* BATCH PAGE LAYOUT */
 .batch-layout {
-    /* Ensures the page is fixed height */
     height: 100vh;
     position: relative; 
     width: 100%;
@@ -334,19 +329,19 @@ body, html {
     padding: 5px 80px 5px 80px; 
     display: flex; 
     flex-direction: column;
-    /* Center the image vertically in the remaining space */
     justify-content: center;
     align-items: center;
 }
 
 .batch-image {
     width: 100%;
-    /* MAXIMIZE: Increased max-height so the image fills as much of the screen as possible */
     max-height: 75vh; 
-    /* Ensures the whole image is visible (CONTAIN) */
     object-fit: contain; 
     border-radius: 10px;
     margin-bottom: 15px;
     /* ADDED GLOW EFFECT */
     box-shadow: 0 0 20px rgba(229, 57, 53, 0.9); 
+    
+    /* FIX: Added a red border to define a clear boundary for the glow effect */
+    border: 3px solid #e53935; 
 }
