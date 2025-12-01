@@ -324,7 +324,7 @@ body, html {
 .batch-container {
     width: 100%;
     flex-grow: 1; 
-    /* NEW: Removed vertical padding for tighter fit inside the border */
+    /* Removed vertical padding for tighter fit inside the border */
     padding: 0 80px; 
     display: flex; 
     flex-direction: column;
@@ -332,18 +332,17 @@ body, html {
     justify-content: center;
     align-items: center;
 
-    /* NEW: Apply the border and glow to the container (which holds the photo AND the names) */
+    /* APPLY THE RED BORDER AND GLOW TO THE CONTAINER */
     border-radius: 10px;
     border: 3px solid #e53935; 
     box-shadow: 0 0 20px rgba(229, 57, 53, 0.9); 
-    overflow: hidden; /* Ensures children don't overflow the rounded corners */
+    overflow: hidden; 
 }
 
 .batch-image {
     width: 100%;
-    /* Let the image take up all space available above the name list */
     max-height: 100%; 
-    /* Keep image uncropped */
+    /* ENSURES NO CROPPING */
     object-fit: contain; 
     
     /* REMOVED: all visual styling should be on the container now */
@@ -354,16 +353,20 @@ body, html {
     background-color: transparent; 
 }
 
-/* NEW STYLING for the names area */
+/* STYLING for the names area (ACHIEVES SOLID GREEN BACKGROUND, BLACK TEXT) */
 .batch-names-area {
-    /* Set the background to the green color shown in the image */
+    /* Solid Green background color from the image */
     background-color: #39e557; 
+    
     width: 100%; 
     padding: 15px 30px;
+    
+    /* Black text color from the image */
     color: black; 
+    
     font-size: 0.85rem;
     text-align: left;
-    white-space: pre-wrap; /* Allows the names to wrap while preserving internal spacing */
+    white-space: pre-wrap; 
 }
 
 /* Style the paragraphs inside the names area */
