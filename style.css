@@ -33,7 +33,7 @@ body, html {
     font-family: 'Poppins', sans-serif;
     background: black;
     color: white;
-    /* FIX: Set back to non-scrollable / fixed height */
+    /* FIX: Enforces NO SCROLLING on the entire page */
     overflow: hidden; 
 }
 
@@ -92,11 +92,10 @@ body, html {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    /* Pushes content to the top to free space at the bottom */
     justify-content: flex-start;
     align-items: center;
     padding-top: 80px;
-    padding-bottom: 40px; /* Reduced padding since we are non-scrollable */
+    padding-bottom: 40px; 
     text-align: center;
     animation: fadeUp 1.3s ease-in-out;
     
@@ -164,7 +163,7 @@ body, html {
 .page-nav {
     width: 100%; 
     display: flex;
-    /* FIX: Pushes both buttons to the right side of the screen */
+    /* Pushes both buttons to the right side of the screen */
     justify-content: flex-end; 
     
     /* Fixed to the viewport bottom */
@@ -212,10 +211,8 @@ body, html {
     justify-content: center;
     gap: 30px;
     margin-top: 40px;
-    /* FIX: Allows the education card content to be viewed within the fixed-height screen */
-    overflow-y: auto; 
-    padding: 20px; 
-    max-height: calc(100vh - 180px); /* Adjust height to fit below navbar and above fixed nav */
+    /* FIX: Removed scrollable part */
+    max-height: calc(100vh - 180px);
 }
 
 .edu-card {
@@ -254,8 +251,7 @@ body, html {
     max-width: 1000px;
     margin: 40px auto 0 auto;
     justify-items: center;
-    /* FIX: Allows the grid to be scrollable if content overflows the fixed screen height */
-    overflow-y: auto; 
+    /* FIX: Removed scrollable part */
     max-height: calc(100vh - 160px); 
     padding: 10px;
 }
@@ -288,8 +284,7 @@ body, html {
     max-width: 1000px;
     margin: 40px auto 0 auto;
     justify-items: center;
-    /* FIX: Allows the grid to be scrollable if content overflows the fixed screen height */
-    overflow-y: auto; 
+    /* FIX: Removed scrollable part */
     max-height: calc(100vh - 160px); 
     padding: 10px;
 }
@@ -315,7 +310,7 @@ body, html {
 
 /* BATCH PAGE LAYOUT */
 .batch-layout {
-    /* FIX: Ensures the page is fixed height */
+    /* Ensures the page is fixed height */
     height: 100vh;
     position: relative; 
     width: 100%;
@@ -331,7 +326,6 @@ body, html {
     width: 100%;
     flex-grow: 1; 
     padding: 5px 80px 5px 80px; 
-    /* FIX: Ensures the image/names area takes available vertical space */
     display: flex; 
     flex-direction: column;
     justify-content: center;
@@ -345,19 +339,4 @@ body, html {
     object-fit: contain; 
     border-radius: 10px;
     margin-bottom: 15px;
-}
-
-/* Rule to contain and make names scrollable within the content area */
-.batch-names-area {
-    /* Set max height relative to the viewport height */
-    max-height: 20vh; 
-    width: 100%;
-    /* Allows internal scrolling if the list of names is too long */
-    overflow-y: auto; 
-    padding: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    
-    position: relative; 
-    z-index: 5;
 }
