@@ -264,12 +264,18 @@ body, html {
     margin-bottom: 10px;
 }
 /* PAGE NAV BUTTONS */
+
 .page-nav {
-    display: flex;
-    justify-content: flex-end; /* moves both buttons to the right */
-    gap: 10px;
-    margin-top: 20px;
+  width: 100%;                /* full width so justify-content works */
+  max-width: 1200px;         /* matches main content width; optional */
+  margin: 20px auto 0 auto;  /* centered container with top margin */
+  display: flex;
+  justify-content: flex-end; /* push buttons to the right */
+  gap: 10px;
+  padding-right: 80px;       /* same horizontal padding as layout (tweak if needed) */
+  box-sizing: border-box;
 }
+
 
 /* BATCH PAGE LAYOUT */
 .batch-layout {
