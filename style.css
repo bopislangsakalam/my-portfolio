@@ -341,7 +341,4 @@ body, html {
     box-shadow: 0 0 20px rgba(229, 57, 53, 0.9); 
     border: 3px solid #e53935; 
     
-    /* FIX: Added background-color back to fill the empty space with red, 
-            making the photo look flush with the red border/glow. */
-    background-color: #e53935;
 }
