@@ -131,6 +131,10 @@ body, html {
 .index-text {
     max-width: 450px;
     animation: fadeUp 1.3s ease-in-out;
+    /* --- NEW CSS FOR LAYOUT FIX --- */
+    display: flex;             /* Use flex layout */
+    flex-direction: column;    /* Stack children (h1, h2, p, page-nav) vertically */
+    justify-content: space-between; /* Optional: adjust vertical distribution */
 }
 
 .index-text h1 {
@@ -265,14 +269,23 @@ body, html {
 }
 /* PAGE NAV BUTTONS */
 
-.page-nav {
-    width: 100%;
+/* =============== PAGE NAV BUTTONS (Specific Fix for Index Page) =============== */
+.page-nav.index-nav-fix {
+    width: 100%; /* Ensure it spans the full width of .index-text */
     display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 20px;
-    padding-right: 80px; /* optional, matches layout padding */
-    box-sizing: border-box;
+    justify-content: flex-end; /* Pushes the 'Next' button to the right side */
+    margin-top: 40px; /* Adds space below the text */
+}
+
+.nav-btn {
+    background: #e53935;
+    padding: 12px 30px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+    /* Remove any positioning/margin/display rules here if they cause conflict */
 }
 
 
