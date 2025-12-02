@@ -49,7 +49,8 @@ body, html {
 /* =============== NAVBAR =============== */
 .navbar {
     width: 100%;
-    padding: 20px 50px;
+    /* FIX: Reduced left/right padding from 50px to 20px */
+    padding: 20px 20px; 
     background: rgba(0,0,0,0.85);
     display: flex;
     justify-content: space-between;
@@ -100,9 +101,9 @@ body, html {
     position: relative;
     z-index: 10;
     
-    /* FIX: MINIMAL SIDE PADDING (20px) FOR MAXIMIZING SPACE */
-    padding-left: 20px; 
-    padding-right: 20px; 
+    /* CRITICAL FIX: Removed ALL horizontal padding from general content */
+    padding-left: 0; 
+    padding-right: 0; 
 }
 
 /* =============== HOME PAGE (Special Fixed Height Layout) =============== */
@@ -112,7 +113,7 @@ body, html {
     align-items: center;
     text-align: left;
     
-    /* INDEX PAGE: RESTORES WIDER ORIGINAL PADDING */
+    /* Index Page: RESTORES the desired 80px padding, making this page the exception */
     padding-left: 80px; 
     padding-right: 80px;
     
@@ -174,8 +175,8 @@ body, html {
     bottom: 40px; 
     left: 0;
     
-    /* FIX: Minimal padding for navigation buttons */
-    padding: 0 20px;
+    /* CRITICAL FIX: Removed ALL horizontal padding from nav buttons */
+    padding: 0;
     
     margin-top: 0; 
     z-index: 900; 
@@ -195,80 +196,34 @@ body, html {
     text-decoration: none;
     font-weight: 600;
     transition: 0.3s ease;
-}
-
-.nav-btn:hover {
-    transform: scale(1.05);
+    
+    /* Added minimal margin to push buttons from the very edge */
+    margin-right: 20px;
 }
 
 /* Fixed position for the single NEXT button on the Index page */
 .index-fixed-nav {
     position: fixed;
     bottom: 40px; 
-    /* RESTORES WIDER PADDING FOR INDEX PAGE */
+    /* Index page uses 80px padding/margin */
     right: 80px;
     z-index: 10;
 }
 
-/* =============== EDUCATION PAGE =============== */
-.edu-container {
-    display: flex;
+/* =============== EDUCATION PAGE, ACHIEVEMENTS, FAMILY =============== */
+
+.edu-container, 
+.achieve-grid,
+.family-grid {
+    display: flex; /* or grid */
     justify-content: center;
     gap: 30px;
     margin-top: 40px;
     max-height: calc(100vh - 180px);
     width: 100%;
-    
-    /* FIX: REMOVE MAX-WIDTH HERE TO MAXIMIZE SPACE */
-    /* max-width: 1200px; */ 
-    
+    /* FIX: Added 20px internal padding to prevent content from touching the screen edge */
     padding: 0 20px; 
 }
-
-.edu-card {
-    /* ... (rest of the edu-card styles) ... */
-    width: 280px;
-    background: rgba(0,0,0,0.7);
-    border-radius: 15px;
-    padding: 20px;
-    border: 2px solid #e53935;
-    animation: fadeUp 1s ease-in-out;
-    animation-fill-mode: both;
-}
-/* ... (rest of the edu page styles) ... */
-
-/* =============== ACHIEVEMENTS PAGE & FAMILY PAGE =============== */
-
-.achieve-grid,
-.family-grid {
-    display: grid;
-    /* Allows many small cards to fit across the screen */
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); 
-    grid-gap: 35px;
-    width: 100%; 
-    
-    /* FIX: REMOVE MAX-WIDTH HERE TO MAXIMIZE SPACE */
-    /* max-width: 1200px; */ 
-    
-    margin: 40px auto 0 auto;
-    justify-items: center;
-    max-height: calc(100vh - 160px); 
-    padding: 0; 
-}
-
-.ach-card,
-.family-card {
-    /* ... (rest of the card styles) ... */
-    width: 100%;
-    max-width: 260px;
-    background: rgba(0,0,0,0.7);
-    border: 2px solid #e53935;
-    border-radius: 12px;
-    padding: 15px;
-    text-align: center;
-    animation: fadeUp 1.2s ease-in-out, glowPulse 3s infinite ease-in-out;
-}
-/* ... (rest of the achievements/family styles) ... */
 
 /* BATCH PAGE LAYOUT */
 .batch-layout {
@@ -286,7 +241,6 @@ body, html {
 .batch-container {
     width: 100%;
     flex-grow: 1; 
-    /* Padding set to 0 to be controlled by the parent .content (20px) */
     padding: 5px 0; 
     display: flex; 
     flex-direction: column;
@@ -296,6 +250,8 @@ body, html {
     box-shadow: none;
     overflow: visible;
     position: static;
+    /* FIX: Added 20px horizontal padding to push the image away from the screen edge */
+    padding: 5px 20px;
 }
 
 .batch-image {
