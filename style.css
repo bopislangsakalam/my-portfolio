@@ -5,11 +5,9 @@
 }
 
 @keyframes glowPulse {
-    /* CHANGED: Increased glow spread from 10px to 15px */
+    /* GLOW INCREASED */
     0% { box-shadow: 0 0 15px rgba(229,57,53,0.4); } 
-    /* CHANGED: Increased peak glow spread from 25px to 40px */
     50% { box-shadow: 0 0 40px rgba(229,57,53,0.9); } 
-    /* CHANGED: Increased glow spread from 10px to 15px */
     100% { box-shadow: 0 0 15px rgba(229,57,53,0.4); } 
 }
 
@@ -219,7 +217,7 @@ body, html {
     background: rgba(0,0,0,0.7);
     border-radius: 15px;
     padding: 20px;
-    /* CHANGED: Increased border thickness from 2px to 4px (Example) */
+    /* BORDER INCREASED */
     border: 4px solid #e53935; 
     animation: fadeUp 1s ease-in-out;
     animation-fill-mode: both;
@@ -239,7 +237,7 @@ body, html {
     margin-top: 10px;
     border-radius: 10px;
     background: #222;
-    /* CHANGED: Increased glow spread from 15px to 30px */
+    /* GLOW INCREASED */
     box-shadow: 0 0 30px rgba(229, 57, 53, 0.7); 
 }
 
@@ -261,7 +259,7 @@ body, html {
     width: 100%;
     max-width: 260px;
     background: rgba(0,0,0,0.7);
-    /* CHANGED: Increased border thickness from 2px to 4px (Example) */
+    /* BORDER INCREASED */
     border: 4px solid #e53935; 
     border-radius: 12px;
     padding: 15px;
@@ -275,7 +273,7 @@ body, html {
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 10px;
-    /* CHANGED: Increased glow spread from 15px to 30px */
+    /* GLOW INCREASED */
     box-shadow: 0 0 30px rgba(229, 57, 53, 0.7); 
 }
 /* =============== FAMILY PAGE =============== */
@@ -296,7 +294,7 @@ body, html {
     width: 100%;
     max-width: 260px;
     background: rgba(0,0,0,0.7);
-    /* CHANGED: Increased border thickness from 2px to 4px (Example) */
+    /* BORDER INCREASED */
     border: 4px solid #e53935; 
     border-radius: 12px;
     padding: 15px;
@@ -310,7 +308,7 @@ body, html {
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 10px;
-    /* CHANGED: Increased glow spread from 15px to 30px */
+    /* GLOW INCREASED */
     box-shadow: 0 0 30px rgba(229, 57, 53, 0.7); 
 }
 
@@ -344,8 +342,8 @@ body, html {
     border-radius: 10px;
     margin-bottom: 15px;
     
-    /* CHANGED: Increased glow spread from 20px to 45px */
+    /* GLOW INCREASED AND KEPT */
     box-shadow: 0 0 45px rgba(229, 57, 53, 0.9); 
-    /* CHANGED: Increased border thickness from 3px to 6px */
-    border: 6px solid #e53935; 
+    
+    /* SOLID BORDER REMOVED HERE */
 }
