@@ -49,8 +49,8 @@ body, html {
 /* =============== NAVBAR =============== */
 .navbar {
     width: 100%;
-    /* RESTORED: Wider padding for navbar */
-    padding: 20px 50px; 
+    /* FIX: Small 20px padding */
+    padding: 20px 20px; 
     background: rgba(0,0,0,0.85);
     display: flex;
     justify-content: space-between;
@@ -101,9 +101,9 @@ body, html {
     position: relative;
     z-index: 10;
     
-    /* FIX: RESTORES LARGE 80px HORIZONTAL PADDING (THE "BORDERS") */
-    padding-left: 80px; 
-    padding-right: 80px; 
+    /* FIX: SMALL 20px HORIZONTAL PADDING (THE "LITTLE GAP") */
+    padding-left: 20px; 
+    padding-right: 20px; 
 }
 
 /* =============== HOME PAGE (Special Fixed Height Layout) =============== */
@@ -113,7 +113,7 @@ body, html {
     align-items: center;
     text-align: left;
     
-    /* Index Page padding remains at 80px */
+    /* Index Page: KEPT WIDE 80px PADDING */
     padding-left: 80px; 
     padding-right: 80px;
     
@@ -121,7 +121,7 @@ body, html {
     position: relative;
 }
 
-/* =============== INDEX PAGE ELEMENTS =============== */
+/* =============== INDEX PAGE ELEMENTS (No changes) =============== */
 .big-circle {
     width: 350px;
     height: 350px;
@@ -175,8 +175,8 @@ body, html {
     bottom: 40px; 
     left: 0;
     
-    /* FIX: RESTORES LARGE 80px PADDING */
-    padding: 0 80px;
+    /* FIX: Small 20px padding */
+    padding: 0 20px;
     
     margin-top: 0; 
     z-index: 900; 
@@ -196,9 +196,6 @@ body, html {
     text-decoration: none;
     font-weight: 600;
     transition: 0.3s ease;
-    
-    /* REMOVED: Temporary margin fix is no longer needed */
-    margin-right: 0; 
 }
 
 /* Fixed position for the single NEXT button on the Index page */
@@ -221,20 +218,17 @@ body, html {
     margin-top: 40px;
     max-height: calc(100vh - 180px);
     
-    /* FIX: Set a max-width so content doesn't stretch too wide on huge monitors */
-    max-width: 1200px;
-    
+    /* FIX: Removed max-width to allow the grid to expand fully */
     width: 100%;
-    /* REMOVED: Internal padding is handled by the parent .content now */
+    /* No internal padding needed, as .content handles the 20px gap */
     padding: 0; 
 }
 
 .edu-card, 
 .ach-card,
 .family-card {
-    /* ... (rest of the card styles) ... */
     width: 100%;
-    max-width: 260px;
+    max-width: 260px; /* Max width for individual cards is fine */
     background: rgba(0,0,0,0.7);
     border: 2px solid #e53935;
     border-radius: 12px;
@@ -268,14 +262,14 @@ body, html {
     overflow: visible;
     position: static;
     
-    /* FIX: Restored 80px padding to match the general page layout and frame the image */
-    padding: 5px 80px;
+    /* FIX: Removed specific padding here, the parent .content handles the 20px gap */
+    padding: 0; 
 }
 
 .batch-image {
     width: 100%;
     max-height: 88vh; 
-    /* Keeps the image stretched to fill the space */
+    /* Stretches the image to fill the container space, up to the 20px gap */
     object-fit: fill; 
     
     border-radius: 10px;
