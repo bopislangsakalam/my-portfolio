@@ -99,6 +99,10 @@ body, html {
     
     position: relative;
     z-index: 10;
+    
+    /* FIX: MINIMAL SIDE PADDING (20px) FOR MAXIMIZING SPACE */
+    padding-left: 20px; 
+    padding-right: 20px; 
 }
 
 /* =============== HOME PAGE (Special Fixed Height Layout) =============== */
@@ -107,8 +111,11 @@ body, html {
     justify-content: space-between;
     align-items: center;
     text-align: left;
-    padding-left: 80px;
+    
+    /* INDEX PAGE: RESTORES WIDER ORIGINAL PADDING */
+    padding-left: 80px; 
     padding-right: 80px;
+    
     height: calc(100vh - 80px); 
     position: relative;
 }
@@ -161,15 +168,15 @@ body, html {
 .page-nav {
     width: 100%; 
     display: flex;
-    /* ENFORCED: Pushes both buttons to the right side of the screen, side-by-side */
     justify-content: flex-end; 
     
-    /* Fixed to the viewport bottom */
     position: fixed; 
     bottom: 40px; 
     left: 0;
     
-    padding: 0 80px;
+    /* FIX: Minimal padding for navigation buttons */
+    padding: 0 20px;
+    
     margin-top: 0; 
     z-index: 900; 
 }
@@ -198,6 +205,7 @@ body, html {
 .index-fixed-nav {
     position: fixed;
     bottom: 40px; 
+    /* RESTORES WIDER PADDING FOR INDEX PAGE */
     right: 80px;
     z-index: 10;
 }
@@ -209,9 +217,16 @@ body, html {
     gap: 30px;
     margin-top: 40px;
     max-height: calc(100vh - 180px);
+    width: 100%;
+    
+    /* FIX: REMOVE MAX-WIDTH HERE TO MAXIMIZE SPACE */
+    /* max-width: 1200px; */ 
+    
+    padding: 0 20px; 
 }
 
 .edu-card {
+    /* ... (rest of the edu-card styles) ... */
     width: 280px;
     background: rgba(0,0,0,0.7);
     border-radius: 15px;
@@ -220,74 +235,30 @@ body, html {
     animation: fadeUp 1s ease-in-out;
     animation-fill-mode: both;
 }
+/* ... (rest of the edu page styles) ... */
 
-.edu-logo {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-    margin-bottom: 15px;
-}
+/* =============== ACHIEVEMENTS PAGE & FAMILY PAGE =============== */
 
-.edu-pic {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    margin-top: 10px;
-    border-radius: 10px;
-    background: #222;
-    /* ADDED GLOW EFFECT */
-    box-shadow: 0 0 15px rgba(229, 57, 53, 0.7); 
-}
-
-/* =============== ACHIEVEMENTS PAGE =============== */
-
-.achieve-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    grid-gap: 35px;
-    width: 90%;
-    max-width: 1000px;
-    margin: 40px auto 0 auto;
-    justify-items: center;
-    max-height: calc(100vh - 160px); 
-    padding: 10px;
-}
-
-.ach-card {
-    width: 100%;
-    max-width: 260px;
-    background: rgba(0,0,0,0.7);
-    border: 2px solid #e53935;
-    border-radius: 12px;
-    padding: 15px;
-    text-align: center;
-    animation: fadeUp 1.2s ease-in-out, glowPulse 3s infinite ease-in-out;
-}
-
-.ach-pic {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    /* ADDED GLOW EFFECT */
-    box-shadow: 0 0 15px rgba(229, 57, 53, 0.7); 
-}
-/* =============== FAMILY PAGE =============== */
-
+.achieve-grid,
 .family-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    /* Allows many small cards to fit across the screen */
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); 
     grid-gap: 35px;
-    width: 90%;
-    max-width: 1000px;
+    width: 100%; 
+    
+    /* FIX: REMOVE MAX-WIDTH HERE TO MAXIMIZE SPACE */
+    /* max-width: 1200px; */ 
+    
     margin: 40px auto 0 auto;
     justify-items: center;
     max-height: calc(100vh - 160px); 
-    padding: 10px;
+    padding: 0; 
 }
 
+.ach-card,
 .family-card {
+    /* ... (rest of the card styles) ... */
     width: 100%;
     max-width: 260px;
     background: rgba(0,0,0,0.7);
@@ -297,16 +268,7 @@ body, html {
     text-align: center;
     animation: fadeUp 1.2s ease-in-out, glowPulse 3s infinite ease-in-out;
 }
-
-.family-pic {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    /* ADDED GLOW EFFECT */
-    box-shadow: 0 0 15px rgba(229, 57, 53, 0.7); 
-}
+/* ... (rest of the achievements/family styles) ... */
 
 /* BATCH PAGE LAYOUT */
 .batch-layout {
@@ -324,21 +286,25 @@ body, html {
 .batch-container {
     width: 100%;
     flex-grow: 1; 
-    padding: 5px 80px 5px 80px; 
+    /* Padding set to 0 to be controlled by the parent .content (20px) */
+    padding: 5px 0; 
     display: flex; 
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
+    border: none;
+    box-shadow: none;
+    overflow: visible;
+    position: static;
 }
 
 .batch-image {
     width: 100%;
-    max-height: 85vh; 
-    /* FIX: Reverted to 'contain' so the image is NOT cropped */
+    max-height: 88vh; 
     object-fit: fill; 
     border-radius: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 0; 
     box-shadow: 0 0 20px rgba(229, 57, 53, 0.9); 
     border: 3px solid #e53935; 
-    
+    background-color: transparent; 
 }
